@@ -1,0 +1,61 @@
+.mainContainer {
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    background-position: top center;
+    background-color: black;
+}
+
+.imageHover {
+    transition: transform 0.3s ease;
+}
+
+.imageHover:hover {
+    transform: scale(1.020);
+}
+
+.heroSection {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heroImage {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.logoSection {
+    position: absolute;
+    top: 57%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+.logoImage {
+    width: 510px;
+    height: auto;
+}
+
+.IPButtonImg {
+    width: 325px;
+    height: auto;
+}
+
+.IPButtonSection {
+    position: absolute;
+    top: 82%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
