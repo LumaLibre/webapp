@@ -2,7 +2,7 @@ const ipAddress = 'play.lumamc.net';
 const guildId = '1188316962258948149';
 
 // Maybe have this return a string instead for a more detailed report?
-async function fetchServerStatus(): Promise<number> {
+export async function fetchServerStatus(): Promise<number> {
     const url = `https://api.mcsrvstat.us/2/${ipAddress}`;
 
     try {
@@ -26,7 +26,7 @@ async function fetchServerStatus(): Promise<number> {
     }
 }
 
-async function fetchDiscordStatus(): Promise<number> {
+export async function fetchDiscordStatus(): Promise<number> {
     const url = `https://discord.com/api/guilds/${guildId}/embed.json`;
 
     try {
