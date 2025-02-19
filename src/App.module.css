@@ -1,9 +1,6 @@
 .appContainer {
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
+    flex-direction: column;
     width: 100vw;
-    background-color: #1a1a1a;
-
+    overflow: hidden;
 }

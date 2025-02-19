@@ -1,5 +1,5 @@
 import styles from "./MainPage.module.css";
-import mainBg from "../../assets/MainBackground.png";
+import mainBg from "../../assets/LumaBackground.png";
 import logo from "../../assets/LumaLogo.png";
 import IPButton from "../../assets/IPButton.png";
 
