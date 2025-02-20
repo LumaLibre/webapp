@@ -32,6 +32,7 @@ html, body {
     padding: 1%;  /* Remove default padding */
 }
 
+/* Navbar item */
 .navItem {
     color: white;  /* Ensure text color is white */
     font-size: 18px;  /* Increased text size */
@@ -52,6 +53,71 @@ html, body {
 .navItem:hover {
     color: #f4f4f4; /* Slight hover effect */
     transform: scale(1.1); /* Slightly increases the size of navbar items */
+}
+
+/* Hamburger icon (hidden on larger screens) */
+.hamburger {
+    display: none; /* Initially hidden */
+    flex-direction: column;
+    cursor: pointer;
+    gap: 5px;
+}
+
+.hamburger div {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Show hamburger icon on small screens */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Show hamburger on small screens */
+        position: absolute;
+        top: 15px; /* Position it in the top-left */
+        left: 15px;
+        z-index: 1100; /* Ensure it stays on top */
+    }
+
+    .navList {
+        display: none; /* Hide the navbar items on small screens */
+        flex-direction: column;
+        gap: 20px;
+        background-color: rgba(0, 0, 0, 0.8);
+        position: absolute;
+        top: 60px; /* Adjust based on your navbar height */
+        left: 0;
+        width: 100%;
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .navList.open {
+        display: flex; /* Show the menu when the 'open' class is added */
+    }
+
+    /* Navbar items when in mobile view */
+    .navItem {
+        font-size: 24px; /* Larger font size for mobile */
+        padding: 15px;
+        text-align: center;
+        width: 100%; /* Ensure the items take full width */
+    }
+
+    /* Styling for when the hamburger is clicked (animations) */
+    .hamburger.open div:nth-child(1) {
+        transform: rotate(45deg) translateY(8px);
+    }
+
+    .hamburger.open div:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.open div:nth-child(3) {
+        transform: rotate(-45deg) translateY(-8px);
+    }
 }
 
 /* Hero section should be flush with the top but take the size of the content */
