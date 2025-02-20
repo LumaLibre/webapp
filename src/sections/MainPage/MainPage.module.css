@@ -44,30 +44,61 @@ html, body {
     width: 38vw; /* Scales based on viewport width */
     max-width: 500px; /* Prevents it from getting too big */
     height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for logo hover */
 }
 
-/* Adjust scaling for smaller screens */
-@media (max-width: 768px) {
-    .logoImage {
-        width: 80vw; /* Increases relative size on smaller screens */
-        max-width: 500px; /* Ensures it doesn’t shrink too much */
-    }
+/* Hover effect for the logo */
+.logoImage:hover {
+    transform: scale(1.05); /* Slightly increases the logo size */
 }
 
-
+/* Styling for the IP Button Section */
 .IPButtonSection {
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-top: 9vh; /* Lowered slightly */
+    margin-top: 7vh; /* Adjust to make it look good */
 }
 
+/* IP Button and Text container combined */
+.IPButtonContainer {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease; /* Smooth transition for container hover */
+}
+
+/* IP Button image */
 .IPButtonImg {
     width: 22vw; /* Made slightly bigger */
     max-width: 450px; /* Increased max size */
     height: auto;
+    transition: transform 0.3s ease; /* Smooth transition for image hover */
+}
+
+/* Center the text over the image */
+.IPText {
+    position: absolute;
+    top: 20%; /* Raised the text to be higher */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8vw;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    transition: transform 0.3s ease; /* Smooth transition for text */
+}
+
+/* Hover effect for combined button and text */
+.IPButtonContainer:hover .IPButtonImg {
+    transform: scale(1.05); /* Slightly increases the button size */
+}
+
+.IPButtonContainer:hover .IPText {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly increases the text size */
 }
 
 /* Adjust positioning for smaller screens */
@@ -78,10 +109,13 @@ html, body {
     }
 
     .IPButtonSection {
-        margin-top: 10vh; /* Moves it even lower on small screens */
+        margin-top: 8vh; /* Moves it a bit higher */
+    }
+
+    .IPText {
+        font-size: 3.5vw; /* Adjusts text size for mobile */
     }
 }
-
 
 /* Ensuring next sections properly stack */
 .secondPage {
