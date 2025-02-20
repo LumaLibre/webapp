@@ -30,35 +30,58 @@ html, body {
     }
 }
 
-/* Keep the logo in position */
 .logoSection {
     position: relative;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
+    top: 10vh; /* Adjust as needed */
 }
 
+/* Make sure the logo resizes dynamically */
 .logoImage {
-    width: 60%;
+    width: 38vw; /* Scales based on viewport width */
+    max-width: 500px; /* Prevents it from getting too big */
     height: auto;
 }
 
-/* Center the button */
-.IPButtonImg {
-    width: 325px;
-    height: auto;
+/* Adjust scaling for smaller screens */
+@media (max-width: 768px) {
+    .logoImage {
+        width: 80vw; /* Increases relative size on smaller screens */
+        max-width: 500px; /* Ensures it doesn’t shrink too much */
+    }
 }
+
 
 .IPButtonSection {
     position: relative;
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 9vh; /* Lowered slightly */
 }
+
+.IPButtonImg {
+    width: 22vw; /* Made slightly bigger */
+    max-width: 450px; /* Increased max size */
+    height: auto;
+}
+
+/* Adjust positioning for smaller screens */
+@media (max-width: 768px) {
+    .IPButtonImg {
+        width: 60vw; /* Slightly larger on small screens */
+        max-width: 350px;
+    }
+
+    .IPButtonSection {
+        margin-top: 10vh; /* Moves it even lower on small screens */
+    }
+}
+
 
 /* Ensuring next sections properly stack */
 .secondPage {
