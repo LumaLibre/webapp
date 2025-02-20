@@ -1,5 +1,5 @@
 import styles from "./ThirdSection.module.css";
-import groundImg from "../../assets/spaceContainer.png";
+import groundImg from "../../assets/SpaceBg.png";
 
 
 function SecondSection() {
