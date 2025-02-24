@@ -125,7 +125,7 @@ html, body {
     position: relative;
     width: 100%;
     min-height: 100vh; /* Ensures it takes at least the full screen height */
-    background-image: url("../../assets/LumaBackground.png");
+    background-image: url("../../../assets/LumaBackground.png");
     background-size: cover; /* Keeps the background filling the section */
     background-position: center;
     background-repeat: no-repeat;

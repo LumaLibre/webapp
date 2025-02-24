@@ -1,16 +1,22 @@
 import React from "react";
-//import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Routes, Route } from "react-router-dom"; // Import Routes and Route for routing
 import styles from "./App.module.css";
-import Mainpage from "./sections/Mainpage/MainPage";
-import SecondSection from "./sections/SecondSection/SecondSection";
-import ThirdSection from "./sections/ThirdSection/ThirdSection.tsx";
+import Mainpage from "./sections/homepage/MainPage/MainPage";
+import SecondSection from "./sections/homepage/SecondSection/SecondSection";
+import ThirdSection from "./sections/homepage/ThirdSection/ThirdSection";
+import RulesPage from "./sections/rules/rules.tsx"; // Import RulesPage
 
 function App() {
     return (
         <div className={styles.appContainer}>
-            <Mainpage />
-            <SecondSection />
-            <ThirdSection/>
+            <Routes>
+                {/* Define routes here */}
+                <Route path="/" element={<Mainpage />} />
+                <Route path="/rules" element={<RulesPage />} />
+                {/* You can add other routes as needed */}
+                <Route path="/second" element={<SecondSection />} />
+                <Route path="/third" element={<ThirdSection />} />
+            </Routes>
         </div>
     );
 }

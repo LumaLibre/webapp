@@ -1,0 +1,59 @@
+/* General container for the page */
+.rulesContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+/* Styling for the content section */
+.rulesContent {
+    flex-grow: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Header styling */
+.rulesContent h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* List of rules styling */
+.rulesContent ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.rulesContent li {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #555;
+}
+
+/* Optional: Add a light background to the rules section */
+.rulesContent {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+}
+
+/* Optional: Style the navbar if needed */
+.navbar {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Style for the navbar links */
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    margin: 0 15px;
+    display: inline-block;
+}
+
+.navbar a:hover {
+    color: #ff6347;  /* Change to a hover color if you like */
+}
