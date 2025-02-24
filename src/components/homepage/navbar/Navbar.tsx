@@ -32,8 +32,10 @@ function Navbar() {
 
             <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faHouse} className={styles.navIcon} />
-                    Home
+                    <Link to="/" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faHouse} className={styles.navIcon} />
+                        Home
+                    </Link>
                 </li>
                 <li className={styles.navItem}>
                     <Link to="/rules" className={styles.navLink}>

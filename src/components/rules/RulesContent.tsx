@@ -1,14 +1,14 @@
 import { useState } from "react";
-import styles from "./rules.module.css";
+import styles from "./RulesContent.module.css";
 import { FaHome, FaUserShield, FaShoppingCart, FaGamepad, FaClipboardList } from "react-icons/fa";
-import Navbar from "../navbar/navbar.tsx"; // Keep the correct path
+import Navbar from "../homepage/navbar/Navbar.tsx";
 
 const Rules = () => {
     const [activeTab, setActiveTab] = useState("Home");
 
     return (
         <div>
-            <Navbar /> {/* Ensure navbar is there */}
+            <Navbar />
             <div className={styles.rulesBG}>
                 <div className={styles.rulesContainer}>
                     {/* Sidebar (Restored Original Look) */}
@@ -36,7 +36,11 @@ const Rules = () => {
                     {/* Rules Content (Restored Original Look) */}
                     <div className={styles.rulesContent}>
                         <h1>LumaMC's Rules</h1>
-                        <p><strong>Here are Luma's rules! Players are encouraged to read and stay up-to-date with our rules to avoid any issues within gameplay or communication between players!</strong></p>
+                        <p><strong>
+                            Here are Luma's rules! Players are encouraged to read and stay
+                            up-to-date with our rules to avoid any issues within gameplay or
+                            communication between players!
+                        </strong></p>
                         <p><strong>Please be aware,</strong></p>
                         <p>These rules are subject to change at any time...</p>
                         <p>Again, players and community members are encouraged to stay informed about any updates...</p>
