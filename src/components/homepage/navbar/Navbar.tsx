@@ -36,7 +36,6 @@ function Navbar() {
                     Home
                 </li>
                 <li className={styles.navItem}>
-                    {/* Wrap the Rules item with a Link */}
                     <Link to="/rules" className={styles.navLink}>
                         <FontAwesomeIcon icon={faGavel} className={styles.navIcon} />
                         Rules

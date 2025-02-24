@@ -1,8 +1,8 @@
-import styles from "./ThirdSection.module.css";
-import groundImg from "../../../assets/SpaceBg.png";
+import styles from "./LeadContent.module.css";
+import groundImg from "../../../../assets/UndergroundBg.png";
 
 
-function SecondSection() {
+function LeadContent() {
     return (
         <section className={styles.heroSection}>
             <img src={groundImg} alt="Main Background" className={styles.heroImage}/>
@@ -10,4 +10,4 @@ function SecondSection() {
     );
 }
 
-export default SecondSection;
+export default LeadContent;

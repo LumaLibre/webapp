@@ -19,7 +19,7 @@
     margin-bottom: 20px;
 }
 
-/* List of rules styling */
+/* List of rulesContent styling */
 .rulesContent ul {
     list-style-type: none;
     padding: 0;
@@ -31,7 +31,7 @@
     color: #555;
 }
 
-/* Optional: Add a light background to the rules section */
+/* Optional: Add a light background to the rulesContent section */
 .rulesContent {
     background-color: #f9f9f9;
     border-radius: 8px;

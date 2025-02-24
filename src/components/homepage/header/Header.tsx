@@ -1,9 +1,9 @@
-import styles from "./MainPage.module.css";
-import Navbar from "../../navbar/navbar.tsx"; // Import the Navbar component
+import styles from "./Header.module.css";
+import Navbar from "../navbar/Navbar.tsx";
 import logo from "../../../assets/LumaLogo.png";
-import IPButton from "../../../assets/IPButton.png";
+import ipButton from "../../../assets/IPButton.png";
 
-function MainPage() {
+function Header() {
     return (
         <section className={styles.heroSection}>
             <Navbar /> {/* Include the navbar here */}
@@ -14,7 +14,7 @@ function MainPage() {
 
             <section className={styles.IPButtonSection}>
                 <div className={styles.IPButtonContainer}>
-                    <img src={IPButton} alt="IP Button" className={styles.IPButtonImg} />
+                    <img src={ipButton} alt="IP Button" className={styles.IPButtonImg} />
                     <p className={styles.IPText}>play.lumamc.net</p>
                 </div>
             </section>
@@ -22,4 +22,4 @@ function MainPage() {
     );
 }
 
-export default MainPage;
+export default Header;

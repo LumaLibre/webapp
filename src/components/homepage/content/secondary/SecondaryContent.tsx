@@ -1,5 +1,5 @@
-import styles from "./SecondSection.module.css";
-import groundImg from "../../../assets/UndergroundBg.png";
+import styles from "./SecondaryContent.module.css";
+import groundImg from "../../../../assets/SpaceBg.png";
 
 
 function SecondSection() {

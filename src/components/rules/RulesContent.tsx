@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "./rules.module.css";
-import Navbar from "../navbar/navbar.tsx";  // Adjust the path if needed
+import styles from "./RulesContent.module.css";
+import Navbar from "../homepage/navbar/Navbar.tsx";  // Adjust the path if needed
 
-const rules: React.FC = () => {
+const rulesContent: React.FC = () => {
     return (
         <div className={styles.rulesContainer}>
             <Navbar />
@@ -16,4 +16,4 @@ const rules: React.FC = () => {
     );
 };
 
-export default rules;
+export default rulesContent;
