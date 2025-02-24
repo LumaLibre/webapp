@@ -10,12 +10,19 @@ function App() {
     return (
         <div className={styles.appContainer}>
             <Routes>
-                {/* Define routes here */}
-                <Route path="/" element={<Mainpage />} />
+                {/* Define the main route that includes all three sections */}
+                <Route
+                    path="/"
+                    element={
+                        <>
+                            <Mainpage />
+                            <SecondSection />
+                            <ThirdSection />
+                        </>
+                    }
+                />
                 <Route path="/rules" element={<RulesPage />} />
                 {/* You can add other routes as needed */}
-                <Route path="/second" element={<SecondSection />} />
-                <Route path="/third" element={<ThirdSection />} />
             </Routes>
         </div>
     );
