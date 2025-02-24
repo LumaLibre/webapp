@@ -1,59 +1,120 @@
-/* General container for the page */
-.rulesContainer {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
+/* Remove unwanted white space */
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
 }
 
-/* Styling for the content section */
-.rulesContent {
-    flex-grow: 1;
+/* Background */
+.rulesBG {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ensures everything starts at the top */
+    min-height: 100vh;
+    padding-top: 80px;
+    background-image: url("../../assets/UndergroundBg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Main container */
+.rulesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
     padding: 20px;
+}
+
+/* Sidebar (Restored Look) */
+.rulesSidebar {
+    width: 250px;
+    background-color: rgba(17, 17, 17, 0.8); /* Darker sidebar */
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+    height: auto;
+}
+
+.rulesSidebar h2 {
     text-align: center;
 }
 
-/* Header styling */
-.rulesContent h1 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 20px;
-}
-
-/* List of rules styling */
-.rulesContent ul {
-    list-style-type: none;
+.rulesSidebar ul {
+    list-style: none;
     padding: 0;
 }
 
-.rulesContent li {
-    font-size: 1.2rem;
-    margin: 10px 0;
-    color: #555;
+.rulesSidebar li {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: #bbb;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.2s;
 }
 
-/* Optional: Add a light background to the rules section */
+.rulesSidebar li:hover,
+.rulesSidebar li.active {
+    color: white;
+    background-color: #444;
+}
+
+.rulesSidebar li svg {
+    margin-right: 10px;
+    color: #a855f7;
+}
+
+/* Rules Content (Restored Look) */
 .rulesContent {
-    background-color: #f9f9f9;
-    border-radius: 8px;
+    flex-grow: 1;
+    padding: 30px;
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 10px;
+    margin-left: 20px;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow-y: auto;
 }
 
-/* Optional: Style the navbar if needed */
-.navbar {
-    background-color: #333;
+/* Headings */
+.rulesContent h1 {
+    font-size: 2.5rem;
     color: white;
-    padding: 10px;
-    text-align: center;
 }
 
-/* Style for the navbar links */
-.navbar a {
+/* Paragraphs */
+.rulesContent p {
+    font-size: 1.2rem;
+    color: #ddd;
+    margin-top: 15px;
+}
+
+/* Strong text */
+.rulesContent strong {
     color: white;
-    text-decoration: none;
-    padding: 10px;
-    margin: 0 15px;
-    display: inline-block;
 }
 
-.navbar a:hover {
-    color: #ff6347;  /* Change to a hover color if you like */
+/* Responsive tweaks */
+@media (max-width: 768px) {
+    .rulesContainer {
+        flex-direction: column;
+    }
+
+    .rulesSidebar {
+        width: 100%;
+        padding: 15px;
+        position: relative;
+    }
+
+    .rulesContent {
+        max-width: 100%;
+        margin-left: 0;
+    }
 }
