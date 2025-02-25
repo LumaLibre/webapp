@@ -101,20 +101,24 @@ body, html {
     color: white;
 }
 
-/* Responsive tweaks */
 @media (max-width: 768px) {
     .rulesContainer {
         flex-direction: column;
+        padding: 0 20px; /* ✅ Adds space on both sides */
     }
 
     .rulesSidebar {
-        width: 100%;
+        width: calc(100% - 40px); /* ✅ Ensures equal left & right spacing */
         padding: 15px;
         position: relative;
+        margin-bottom: 20px; /* ✅ Adds space below sidebar */
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .rulesContent {
-        max-width: 100%;
-        margin-left: 0;
+        width: calc(100% - 40px); /* ✅ Ensures equal spacing like sidebar */
+        margin: 20px auto 0; /* ✅ Centers it properly */
+        padding: 20px;
     }
 }

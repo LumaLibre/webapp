@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
 .mainContainer {
     background-size: cover;
     background-repeat: no-repeat;
@@ -31,15 +33,6 @@
     object-fit: contain; /* Shows the full image without cropping at first */
 }
 
-/* When the screen size shrinks, switch to cropping the sides */
-@media (max-width: 768px) {
-    .heroImage {
-        height: 100vh; /* Forces it to always fit the screen height */
-        object-fit: cover; /* Crops the sides instead of shrinking */
-    }
-}
-
-
 
 
 html, body {
@@ -53,5 +46,92 @@ html, body {
 html::-webkit-scrollbar {
     display: none;
 }
+.heroText {
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Paytone One", sans-serif;
+    width: 90vw;
+    padding: 0 5vw;
+}
+
+
+.heroText h1 {
+    font-size: 3rem;
+    margin: 0;
+    width: 100%;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.heroText {
+    position: absolute;
+    top: 60%; /* Move text lower */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Paytone One", sans-serif;
+    font-size: 1.1rem;
+    width: 90vw;
+    padding: 0 5vw;
+    color: rgba(0, 0, 0, 0.8);
+}
+
+.imageContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2%;
+    margin-top: -4%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .heroImage {
+        height: 100vh;
+        object-fit: cover;
+    }
+    .heroText {
+        top: 55%; /* Move text even lower on smaller screens */
+    }
+    .imageContainer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1%; /* Reduce space between images */
+        margin-top: 12vh; /* Adjust spacing below text */
+    }
+    .smallImage {
+        width: 18vw; /* Scale based on viewport width */
+        max-width: 90px; /* Prevent them from getting too big */
+    }
+}
+
+
+.smallImage {
+    width: 28%; /* Adjust size */
+    transition: transform 0.3s ease-in-out;
+}
+
+.smallImage:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .imageContainer {
+        gap: 30%; /* Reduce spacing on smaller screens */
+    }
+
+    .smallImage {
+        width: 10%; /* Make images slightly smaller on small screens */
+    }
+}
+
+
+
+
+
 
 

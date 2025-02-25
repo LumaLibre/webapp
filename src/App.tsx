@@ -4,6 +4,7 @@ import MainPage from "./pages/MainPage.tsx";
 import RulesPage from "./pages/RulesPage.tsx";
 
 
+
 function App() {
     return (
         <div className={styles.appContainer}>
