@@ -1,44 +1,42 @@
-const ipAddress = 'play.lumamc.net';
-const guildId = '1188316962258948149';
+import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "../constants.ts";
 
-// Maybe have this return a string instead for a more detailed report?
-export async function fetchServerStatus(): Promise<number> {
-    const url = `https://api.mcsrvstat.us/2/${ipAddress}`;
+export async function fetchServerStatus(): Promise<string> {
+    const failed = 'Failed to fetch server status';
 
     try {
         // Fetch data from the API
-        const response = await fetch(url);
+        const response = await fetch(LUMA_SERVERSTATS_ENDPOINT);
 
-        // Check if the response is successful
+        // Check if the response is okay
         if (!response.ok) {
             console.error('Failed to fetch server status:', response.statusText);
-            return 0;
+            return failed;
         }
         const data = await response.json();
         if (data.online) { // are we online?
-            return data.players.online;
+            return data.players.online.toString();
         } else {
-            return 0;
+            return '0';
         }
     } catch (error) {
-        console.error('Error fetching MC server status:', error);
-        return 0;
+        console.error('Error fetching Luma\'s server status:', error);
+        return failed;
     }
 }
 
-export async function fetchDiscordStatus(): Promise<number> {
-    const url = `https://discord.com/api/guilds/${guildId}/embed.json`;
+export async function fetchDiscordStatus(): Promise<string> {
+    const failed = 'Failed to fetch Discord status';
 
     try {
-        const response = await fetch(url);
+        const response = await fetch(LUMA_DISCORD_ENDPOINT);
         if (!response.ok) {
             console.error('Failed to fetch Discord status:', response.statusText);
-            return 0;
+            return failed;
         }
         const data = await response.json();
-        return data.presence_count;
+        return data.presence_count.toString();
     } catch (error) {
         console.error('Error fetching Discord status:', error);
-        return 0;
+        return failed;
     }
 }
