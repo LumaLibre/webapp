@@ -2,8 +2,7 @@ import { Routes, Route } from "react-router-dom"; // Import Routes and Route for
 import styles from "./App.module.css";
 import MainPage from "./pages/MainPage.tsx";
 import RulesPage from "./pages/RulesPage.tsx";
-import NewsPost from "./components/NewsPost.tsx";
-
+import URLWrappedNewsPost from "./components/news/URLWrappedNewsPost.tsx";
 
 function App() {
     console.log("App.tsx");
@@ -12,11 +11,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />}/>
                 <Route path="/rules" element={<RulesPage />} />
-                {/* redirect to discord */}
-                <Route path="/chat" element={
-                    <NewsPost id={"article-title"} />
-                }
-                />
+                <Route path="/newspost/:id" element={<URLWrappedNewsPost />} />
             </Routes>
         </div>
     );
