@@ -11,11 +11,9 @@ function LeadContent() {
             <div className={styles.heroText}>
                 <h1>Welcome to Luma</h1>
                 <p>
-                    We are a TownySMP server dedicated to delivering high-quality gameplay within
-                    a vibrant and welcoming community. At Luma, you'll discover a variety of
-                    entertaining and distinctive features, including custom-coded items, a
-                    synchronized seasonal world reflecting real-life seasons, item wraps, mcMMO,
-                    and, of course, Towny!
+                    We're a TownySMP server focused on high-quality gameplay and a vibrant,
+                    welcoming community. Join us to enjoy unique features like custom items,
+                    a seasonal world, item wraps, mcMMO, and Towny!
                 </p>
                 {/* Image container */}
                 <div className={styles.imageContainer}>
