@@ -46,3 +46,23 @@
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 7; /* Limit to 3 lines */
 }
+
+.container img,
+.biggerContainer img {
+    border-radius: 5px;
+    width: 22px;
+    height: 22px;
+}
+
+
+.container h2,
+.biggerContainer h2 {
+    color: #911AB0;
+    /*text-decoration: none; !* Ensure no underline by default *!*/
+    /*transition: text-decoration 0.2s ease-in-out;*/
+}
+
+/*.container h2:hover,*/
+/*.biggerContainer h2:hover {*/
+/*    text-decoration: underline;*/
+/*}*/

@@ -23,12 +23,20 @@ export class NewsPostContainer {
         this.content = content;
     }
 
-    private getAuthorAvatarURL(size: number): string {
+    public getAuthorAvatarURL(): string {
+        return `${MINOTAR_HELM_API}${this.author}`;
+    }
+
+    public getAuthorAvatar(): JSX.Element {
+        return <img src={this.getAuthorAvatarURL()} alt={this.author} />;
+    }
+
+    public getAuthorAvatarURLWithSize(size: number): string {
         return `${MINOTAR_HELM_API}${this.author}/${size}.png`;
     }
 
-    public getAuthorAvatar(size: number): JSX.Element {
-        return <img src={this.getAuthorAvatarURL(size)} alt={this.author} />;
+    public getAuthorAvatarWithSize(size: number): JSX.Element {
+        return <img src={this.getAuthorAvatarURLWithSize(size)} alt={this.author} />;
     }
 
     public formatTimestampWithOrdinal(): string {

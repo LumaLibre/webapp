@@ -19,7 +19,10 @@ function NewsPost({ newsPost, biggerContainer }: { newsPost: NewsPostContainer, 
         >
             <img src={newsPost.thumbnail} alt={newsPost.title} width={300} height={175}/>
             <div className={container}>
-                <h2>{newsPost.title}</h2>
+                {/*<div style={{display: "flex", alignItems: "center", gap: "8px"}}>*/}
+                {/*    */}
+                {/*</div>*/}
+                <h2>{newsPost.getAuthorAvatar()} • {newsPost.title}</h2>
                 {newsPost.renderContentSmall()}
             </div>
         </div>

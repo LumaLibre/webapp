@@ -8,3 +8,5 @@ export const LUMA_SERVERSTATS_ENDPOINT: string = `https://api.mcsrvstat.us/2/${L
 export const LUMA_DISCORD_ENDPOINT: string = `https://discord.com/api/guilds/${LUMA_DISCORD_GUILD_ID}/embed.json`;
 
 export const MINOTAR_HELM_API: string = 'https://minotar.net/helm/';
+
+export const STANDARD_COLOR = '#911AB0';

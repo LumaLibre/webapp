@@ -9,7 +9,7 @@ const Rules = () => {
     return (
         <div>
             <Navbar />
-            <div className={styles.rulesBG}>
+            <div className={styles.rulesBackground}>
                 <div className={styles.rulesContainer}>
                     {/* Sidebar (Restored Original Look) */}
                     <div className={styles.rulesSidebar}>
