@@ -60,8 +60,10 @@ function Navbar() {
                     Wiki
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faRocket} className={styles.navIcon} />
-                    News
+                    <Link to="/news" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faRocket} className={styles.navIcon} />
+                        News
+                    </Link>
                 </li>
             </ul>
         </nav>

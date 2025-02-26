@@ -1,0 +1,289 @@
+.newsPageBackground {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keeps content aligned at the top */
+    min-height: 100vh; /* Ensure it occupies full viewport height */
+    position: relative; /* Ensure that children can be absolutely positioned inside */
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-image: url("../../assets/SpaceBg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+}
+
+
+.postList {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic grid */
+    max-width: 1280px;
+    width: 100%;
+    justify-content: center; /* Centers grid items */
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/* Ensure grid adapts smoothly on different screen sizes */
+@media (max-width: 1024px) { /* Tablets */
+    .postList {
+        grid-template-columns: repeat(2, minmax(300px, 1fr)); /* 2 per row */
+    }
+}
+
+@media (max-width: 640px) { /* Mobile */
+    .postList {
+        grid-template-columns: repeat(1, minmax(300px, 1fr)); /* 1 per row */
+        justify-content: center; /* Ensures it's centered */
+    }
+}
+
+/* Carousel Nav */
+
+.carouselNav {
+    position: absolute;
+    bottom: -6.7%; /* Aligns the carousel nav to the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+.halfCardsCarouselNav {
+    position: absolute;
+    bottom: -100%; /* Aligns the carousel nav to the bottom */
+    left: 50%;
+    transform: translateX(-50%); /* Centers it horizontally */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 1rem;
+}
+
+
+
+.carouselNavBack {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    tab-size: 4;
+    --font: Nunito,Arial,sans-serif;
+    --titleFont: Paytone One,Arial,sans-serif;
+    --tw-bg-opacity: 1;
+    border: 0 solid;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-sizing: border-box;
+    font-feature-settings: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-variation-settings: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    -webkit-appearance: button;
+    background-color: transparent;
+    cursor: pointer;
+    outline: none!important;
+    --tw-drop-shadow: drop-shadow(6px 6px rgba(0,0,0,.15));
+    filter: drop-shadow(-3px 4px rgba(0,0,0,.15));
+    flex-shrink: 0;
+    height: 1.75rem;
+    overflow: auto;
+    position: relative;
+    width: 1.75rem;
+}
+
+
+.carouselNavForward {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    tab-size: 4;
+    --font: Nunito,Arial,sans-serif;
+    --titleFont: Paytone One,Arial,sans-serif;
+    --tw-bg-opacity: 1;
+    border: 0 solid;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-y: 1;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-sizing: border-box;
+    font-feature-settings: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-variation-settings: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    text-transform: none;
+    -webkit-appearance: button;
+    background-color: transparent;
+    background-image: none;
+    cursor: pointer;
+    outline: none!important;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-scale-x: -1;
+    --tw-drop-shadow: drop-shadow(6px 6px rgba(0,0,0,.15));
+    filter: drop-shadow(-3px 4px rgba(0,0,0,.15));
+    flex-shrink: 0;
+    height: 1.75rem;
+    overflow: auto;
+    position: relative;
+    width: 1.75rem;
+}
+
+.carouselArrow {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    tab-size: 4;
+    --font: Nunito,Arial,sans-serif;
+    --titleFont: Paytone One,Arial,sans-serif;
+    color: inherit;
+    letter-spacing: inherit;
+    text-transform: none;
+    cursor: pointer;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-pan-x: ;
+    --tw-pan-y: ;
+    --tw-pinch-zoom: ;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-gradient-from-position: ;
+    --tw-gradient-via-position: ;
+    --tw-gradient-to-position: ;
+    --tw-ordinal: ;
+    --tw-slashed-zero: ;
+    --tw-numeric-figure: ;
+    --tw-numeric-spacing: ;
+    --tw-numeric-fraction: ;
+    --tw-ring-inset: ;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    --tw-blur: ;
+    --tw-brightness: ;
+    --tw-contrast: ;
+    --tw-grayscale: ;
+    --tw-hue-rotate: ;
+    --tw-invert: ;
+    --tw-saturate: ;
+    --tw-sepia: ;
+    --tw-drop-shadow: ;
+    --tw-backdrop-blur: ;
+    --tw-backdrop-brightness: ;
+    --tw-backdrop-contrast: ;
+    --tw-backdrop-grayscale: ;
+    --tw-backdrop-hue-rotate: ;
+    --tw-backdrop-invert: ;
+    --tw-backdrop-opacity: ;
+    --tw-backdrop-saturate: ;
+    --tw-backdrop-sepia: ;
+    --tw-contain-size: ;
+    --tw-contain-layout: ;
+    --tw-contain-paint: ;
+    --tw-contain-style: ;
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 238 208/var(--tw-bg-opacity));
+    bottom: .25rem;
+    height: 1.25rem;
+    left: 0;
+    mask: url("../../assets/cauroselArrow.svg") no-repeat center/cover;
+    position: absolute;
+    width: 1.75rem;
+}
+
+.carouselNavDot {
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: transparent;
+    tab-size: 4;
+    --font: Nunito,Arial,sans-serif;
+    --titleFont: Paytone One,Arial,sans-serif;
+    border: 0 solid;
+    --tw-border-spacing-x: 0;
+    --tw-border-spacing-y: 0;
+    --tw-translate-x: 0;
+    --tw-rotate: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-scroll-snap-strictness: proximity;
+    --tw-ring-offset-width: 0px;
+    --tw-ring-offset-color: #fff;
+    --tw-ring-color: rgba(59,130,246,.5);
+    --tw-ring-offset-shadow: 0 0 #0000;
+    --tw-ring-shadow: 0 0 #0000;
+    --tw-shadow: 0 0 #0000;
+    --tw-shadow-colored: 0 0 #0000;
+    box-sizing: border-box;
+    font-feature-settings: inherit;
+    color: inherit;
+    font-family: inherit;
+    font-size: 100%;
+    font-variation-settings: inherit;
+    font-weight: inherit;
+    letter-spacing: inherit;
+    line-height: inherit;
+    margin: 0;
+    padding: 0;
+    text-transform: none;
+    -webkit-appearance: button;
+    background-image: none;
+    cursor: pointer;
+    outline: none!important;
+    position: relative;
+    height: .75rem;
+    width: .75rem;
+    transform: translate(var(--tw-translate-x),var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    --tw-translate-y: -0.25rem;
+    border-radius: 9999px;
+    --tw-bg-opacity: 1;
+    background-color: rgb(254 238 208/var(--tw-bg-opacity));
+    transition-duration: .15s;
+    filter: drop-shadow(-3px 4px rgba(0,0,0,.15));
+}

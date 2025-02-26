@@ -1,5 +1,5 @@
 import {useQuery} from "@tanstack/react-query";
-import styles from "./content/postcard/PostCard.module.css";
+import styles from "./NewsPageContent.module.css";
 import PostCard from "./content/postcard/PostCard.tsx";
 import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
 import {fetchAllNewsPosts} from "../../scripts/newsPosts.ts";
@@ -15,6 +15,8 @@ const newsStyleSection = (element: JSX.Element) => {
         </section>
     );
 };
+
+const pageRef: string = "/news?page=";
 
 
 function NewsPageContent({page}: { page: number }) {
@@ -38,18 +40,43 @@ function NewsPageContent({page}: { page: number }) {
     const startIndex = (page - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const paginatedPosts = newsPosts.slice(startIndex, endIndex);
+    const numOfPages = Math.ceil(newsPosts.length / postsPerPage);
 
+    if (paginatedPosts.length === 0) {
+        // Redirect to the first page if the page is out of bounds
+        window.location.href = `${pageRef}1`;
+    }
+
+    let carouselNav = styles.carouselNav;
+    if (paginatedPosts.length <= 4) {
+        carouselNav = styles.halfCardsCarouselNav;
+    }
     return (
         newsStyleSection(
-            <div className={styles.postList}>
-                {paginatedPosts.map((post: NewsPostContainer, index: number) => (
-                    <PostCard
-                        newsPost={post}
-                        biggerContainer={index > 4}
-                        key={post.title}
-                    />
-                ))}
-            </div>
+            <>
+                <div className={styles.postList}>
+                    {paginatedPosts.map((post: NewsPostContainer, index: number) => (
+                        <PostCard
+                            newsPost={post}
+                            biggerContainer={index > 4}
+                            key={post.title}/>
+                    ))}
+                    <div className={carouselNav}>
+                        {
+                            // redirect to previous page if page is not 1 (/news?page=<page >)
+                        }
+                        <a className={styles.carouselNavBack} href={`${pageRef}${page - 1}`}>
+                            <div className={styles.carouselArrow}/>
+                        </a>
+                        {Array.from({length: numOfPages}, (_, i) => (
+                            <a key={i} className={styles.carouselNavDot} href={`${pageRef}${i}`}/>
+                        ))}
+                        <a className={styles.carouselNavForward} href={`${pageRef}${page + 1}`}>
+                            <div className={styles.carouselArrow}/>
+                        </a>
+                    </div>
+                </div>
+            </>
         )
     );
 }

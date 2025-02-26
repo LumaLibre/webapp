@@ -11,7 +11,7 @@ function NewsPost({ newsPost, biggerContainer }: { newsPost: NewsPostContainer, 
         <div className={styles.postCard}>
             <img src={newsPost.thumbnail} alt={newsPost.title} width={300} height={175}/>
             <div className={container}>
-                <h4>{newsPost.title}</h4>
+                <h2>{newsPost.title}</h2>
                 {newsPost.renderContentSmall()}
             </div>
         </div>
