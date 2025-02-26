@@ -34,7 +34,7 @@ function NewsPageContent({page}: { page: number }) {
     if (!newsPosts) return newsStyleSection(<h2>No news posts found.</h2>);
 
     // Pagination logic
-    const postsPerPage = 6;
+    const postsPerPage = 8;
     const startIndex = (page - 1) * postsPerPage;
     const endIndex = startIndex + postsPerPage;
     const paginatedPosts = newsPosts.slice(startIndex, endIndex);
@@ -42,8 +42,12 @@ function NewsPageContent({page}: { page: number }) {
     return (
         newsStyleSection(
             <div className={styles.postList}>
-                {paginatedPosts.map((post) => (
-                    <PostCard newsPost={post} key={post.title}/>
+                {paginatedPosts.map((post: NewsPostContainer, index: number) => (
+                    <PostCard
+                        newsPost={post}
+                        biggerContainer={index > 4}
+                        key={post.title}
+                    />
                 ))}
             </div>
         )
