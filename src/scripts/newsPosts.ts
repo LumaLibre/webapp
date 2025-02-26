@@ -14,6 +14,7 @@ export async function fetchAllNewsPosts(): Promise<NewsPostContainer[]> {
 
     // Explicitly assert the type of the values returned from the API.
     const newsPostsArray = Object.values(jsonData) as Array<{
+        id: string;
         title: string;
         thumbnail: string;
         author: string;
@@ -23,6 +24,7 @@ export async function fetchAllNewsPosts(): Promise<NewsPostContainer[]> {
 
     return newsPostsArray.map((newsPost) =>
         new NewsPostContainer(
+            newsPost.id,
             newsPost.title,
             newsPost.thumbnail,
             newsPost.author,
@@ -37,5 +39,5 @@ export async function fetchAllNewsPosts(): Promise<NewsPostContainer[]> {
 export async function fetchNewsPost(id: string): Promise<NewsPostContainer> {
     return fetch(endpoint + id)
         .then(response => response.json())
-        .then(newsPost => new NewsPostContainer(newsPost.title, newsPost.thumbnail, newsPost.author, newsPost.timestamp, newsPost.content));
+        .then(newsPost => new NewsPostContainer(newsPost.id, newsPost.title, newsPost.thumbnail, newsPost.author, newsPost.timestamp, newsPost.content));
 }

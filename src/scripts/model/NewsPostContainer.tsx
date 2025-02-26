@@ -7,13 +7,15 @@ export class NewsPostContainer {
     static MAX_CHARACTERS_POSTCARD_LINE: number = 40;
     static MAX_POSTCARD_LINES: number = 7;
 
+    id: string;
     title: string;
     thumbnail: string;
     author: string;
     timestamp: number;
     content: string;
 
-    constructor(title: string, thumbnail: string, author: string, timestamp: number, content: string) {
+    constructor(id: string, title: string, thumbnail: string, author: string, timestamp: number, content: string) {
+        this.id = id;
         this.title = title;
         this.thumbnail = thumbnail;
         this.author = author;

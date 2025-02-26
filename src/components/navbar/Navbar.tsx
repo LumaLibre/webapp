@@ -48,16 +48,22 @@ function Navbar() {
                     Vote
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faStore} className={styles.navIcon} />
-                    Store
+                    <a href="https://store.lumamc.net" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faStore} className={styles.navIcon} />
+                        Store
+                    </a>
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faMap} className={styles.navIcon} />
-                    Map
+                    <a href="https://map.lumamc.net" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faMap} className={styles.navIcon} />
+                        Map
+                    </a>
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faBook} className={styles.navIcon} />
-                    Wiki
+                    <a href="https://wiki.lumamc.net" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faBook} className={styles.navIcon} />
+                        Wiki
+                    </a>
                 </li>
                 <li className={styles.navItem}>
                     <Link to="/news" className={styles.navLink}>
