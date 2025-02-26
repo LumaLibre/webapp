@@ -32,7 +32,7 @@ html, body {
 }
 
 /* Navbar item */
-.navItem {
+.navItems {
     color: white;  /* Ensure text color is white */
     font-size: 18px;  /* Increased text size */
     font-weight: bold;
@@ -49,7 +49,7 @@ html, body {
 }
 
 /* Hover effect for navbar items */
-.navItem:hover {
+.navItems:hover {
     color: #f4f4f4; /* Slight hover effect */
     transform: scale(1.1); /* Slightly increases the size of navbar items */
 }
@@ -98,7 +98,7 @@ html, body {
     }
 
     /* Navbar items when in mobile view */
-    .navItem {
+    .navItems {
         font-size: 24px; /* Larger font size for mobile */
         padding: 15px;
         text-align: center;

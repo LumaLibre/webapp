@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./RulesContent.module.css";
 import { FaHome, FaUserShield, FaShoppingCart, FaGamepad, FaClipboardList } from "react-icons/fa";
-import Navbar from "../homepage/navbar/Navbar.tsx";
+import Navbar from "../navbar/Navbar.tsx";
 
 const Rules = () => {
     const [activeTab, setActiveTab] = useState("Home");

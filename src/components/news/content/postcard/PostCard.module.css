@@ -1,0 +1,72 @@
+.newsPageBackground {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Ensures everything starts at the top */
+    min-height: 100vh;
+    padding-top: 80px;
+    background-image: url("../../../../assets/SpaceBg.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat-y;
+    padding-bottom: 40px;
+}
+
+.postList {
+    position: relative; /* Instead of absolute */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    max-width: 1280px; /* Limits to 4 items per row */
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+
+/*.postList {*/
+/*    position: relative;*/
+/*    top: 600px;*/
+/*    left: 45%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    display: grid;*/
+/*    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));*/
+/*    max-width: 1280px; !* Limits to 4 items per row (4 * 300px + gaps) *!*/
+/*    width: 100%;*/
+/*    justify-content: center;*/
+/*    gap: 1.5rem;*/
+/*    padding: 1rem; !* Add padding for better spacing *!*/
+/*}*/
+
+
+.postCard {
+    /* Add shadows to create the "card" effect */
+    width: 313px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px; /* 5px rounded corners */
+    background: rgba(0,0,0,0.4);
+}
+.postCard:nth-child(n+9) {
+    display: none; /* Hide cards beyond the 8th */
+}
+.postCard img {
+    /*width: 300px;*/
+    /*height: 175px;*/
+    width: auto;
+    height: 175px;
+    border-radius: 5px 5px 0 0; /* Rounded corners on top */
+}
+
+.postCard:hover {
+    will-change: filter;
+    filter: drop-shadow(0 0 2em rgba(129, 165, 255, 0.2));
+    /*box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);*/
+}
+
+.container {
+    padding: 0 0 35px 16px;
+    color: white;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 7; /* Limit to 3 lines */
+}
+

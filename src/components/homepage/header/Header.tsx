@@ -1,5 +1,5 @@
 import styles from "./Header.module.css";
-import Navbar from "../navbar/Navbar.tsx";
+import Navbar from "../../navbar/Navbar.tsx";
 import logo from "../../../assets/LumaLogo.png";
 import ipButton from "../../../assets/IPButton.png";
 

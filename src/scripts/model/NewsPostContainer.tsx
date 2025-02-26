@@ -4,6 +4,9 @@ import ReactMarkdown from 'react-markdown';
 
 export class NewsPostContainer {
 
+    static MAX_CHARACTERS_POSTCARD_LINE: number = 40;
+    static MAX_POSTCARD_LINES: number = 7;
+
     title: string;
     thumbnail: string;
     author: string;
@@ -49,4 +52,52 @@ export class NewsPostContainer {
     public renderContent(): JSX.Element {
         return <ReactMarkdown>{this.content}</ReactMarkdown>;
     }
+
+    public renderContentSmall(): JSX.Element {
+        const newContent = this.content.replace(/\n/g, '');
+
+        const lines: string[] = [];
+        let currentLine = '';
+        let builtWord = '';
+        for (const character of newContent) {
+            if (lines.length >= NewsPostContainer.MAX_POSTCARD_LINES) {
+                lines[NewsPostContainer.MAX_POSTCARD_LINES - 1] += '...';
+                break;
+            }
+
+            if (currentLine.length >= NewsPostContainer.MAX_CHARACTERS_POSTCARD_LINE) {
+                // Go back until we find a space, remove the word + space and add it to the next line
+                if (!currentLine.includes(' ') || currentLine.endsWith(' ')) {
+                    lines.push(currentLine);
+                    currentLine = '';
+                }
+
+                for (const localChar of currentLine.split('').reverse()) {
+                    if (localChar === ' ') {
+                        break;
+                    }
+                    builtWord += localChar;
+                }
+
+                builtWord = builtWord.split('').reverse().join('');
+                currentLine = currentLine.substring(0, currentLine.length - builtWord.length);
+                lines.push(currentLine);
+            }
+
+            if (builtWord.length > 0) {
+                currentLine = builtWord;
+                builtWord = '';
+            }
+            currentLine += character;
+        }
+
+        const done = lines.join('\n');
+
+        // Convert \n to <br />
+        const markdownWithBreaks = done.replace(/\n/g, '  \n');
+
+        return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
+    }
+
+
 }

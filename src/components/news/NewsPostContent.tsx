@@ -4,11 +4,11 @@ import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
 
 
 /**
- * NewsPost component, displays a single news post in a page.
+ * NewsPostContent component, displays a single news post in a page.
  * @param id The id of the news post to display.
- * @constructor NewsPost
+ * @constructor NewsPostContent
  */
-function NewsPost({ id }: { id: string }) {
+function NewsPostContent({ id }: { id: string }) {
 
     const {
         data: newsPost,
@@ -41,4 +41,4 @@ function NewsPost({ id }: { id: string }) {
     );
 }
 
-export default NewsPost;
+export default NewsPostContent;

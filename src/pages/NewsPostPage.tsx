@@ -1,11 +1,11 @@
 import {useParams} from "react-router-dom";
-import NewsPost from "./NewsPost.tsx";
+import NewsPostContent from "../components/news/NewsPostContent.tsx";
 
 /**
  * A component that displays a news post based on the URL.
- * @constructor URLWrappedNewsPost
+ * @constructor NewsPostPage
  */
-function URLWrappedNewsPost() {
+function NewsPostPage() {
     const { id } = useParams<{ id: string }>(); // Access the `id` from the URL
 
     if (!id) {
@@ -13,8 +13,8 @@ function URLWrappedNewsPost() {
     }
 
     return (
-        <NewsPost id={id} />
+        <NewsPostContent id={id} />
     );
 }
 
-export default URLWrappedNewsPost;
+export default NewsPostPage;

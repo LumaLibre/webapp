@@ -1,11 +1,11 @@
 import styles from "./SecondaryContent.module.css";
-import groundImg from "../../../../assets/SpaceBg.png";
+import spaceImg from "../../../../assets/SpaceBg.png";
 
 
 function SecondSection() {
     return (
         <section className={styles.heroSection}>
-            <img src={groundImg} alt="Main Background" className={styles.heroImage}/>
+            <img src={spaceImg} alt="Main Background" className={styles.heroImage}/>
         </section>
     );
 }
