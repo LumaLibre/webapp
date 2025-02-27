@@ -33,10 +33,10 @@ function NewsPostContent({ id }: { id: string }) {
         <div>
             <h2>{newsPost.title}</h2>
             <img src={newsPost.thumbnail} alt={newsPost.title} />
-            {newsPost.getAuthorAvatar(8)}
+            {newsPost.getAuthorAvatar()}
             <p>By {newsPost.author}</p>
-            <p>{new Date(newsPost.timestamp).toLocaleString()}</p>
-            <p>{newsPost.content}</p>
+            <p>{newsPost.formatTimestampWithOrdinal()}</p>
+            <p>{newsPost.renderContent()}</p>
         </div>
     );
 }

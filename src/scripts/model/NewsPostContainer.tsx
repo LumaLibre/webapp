@@ -1,10 +1,13 @@
 import {MINOTAR_HELM_API} from "../../constants.ts";
 import {JSX} from "react";
 import ReactMarkdown from 'react-markdown';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import emoji from 'emoji-dictionary';
 
 export class NewsPostContainer {
 
-    static MAX_CHARACTERS_POSTCARD_LINE: number = 40;
+    static MAX_CHARACTERS_POSTCARD_LINE: number = 30;
     static MAX_POSTCARD_LINES: number = 7;
 
     id: string;
@@ -59,12 +62,23 @@ export class NewsPostContainer {
         return `${month} ${day}${getOrdinalSuffix(day)}, ${year}`;
     }
 
+    // Returns a short version of the timestamp (e.g., 1/17, 2/20, 3/5, etc.)
+    public formatTimestampShort(): string {
+        const date = new Date(this.timestamp);
+        const month = date.getMonth() + 1;
+        const day = date.getDate();
+        return `${month}/${day}`;
+    }
+
     public renderContent(): JSX.Element {
-        return <ReactMarkdown>{this.content}</ReactMarkdown>;
+        const markdownWithBreaks = this.content
+            .replace(/\n/g, '  \n')
+            .replace(/:\w+:/g, (match) => emoji.getUnicode(match) || match);
+        return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
     }
 
     public renderContentSmall(): JSX.Element {
-        const newContent = this.content.replace(/\n/g, '');
+        const newContent = this.content.replace(/\n+/g, ' ');
 
         const lines: string[] = [];
         let currentLine = '';
@@ -101,10 +115,12 @@ export class NewsPostContainer {
             currentLine += character;
         }
 
-        const done = lines.join('\n');
+        const done = lines.join('');
 
         // Convert \n to <br />
-        const markdownWithBreaks = done.replace(/\n/g, '  \n');
+        const markdownWithBreaks = done
+            .replace(/\n/g, '  \n')
+            .replace(/:\w+:/g, (match) => emoji.getUnicode(match) || match);
 
         return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
     }

@@ -32,19 +32,17 @@
 
 
 .container {
-    padding: 0 0 20px 16px;
+    padding: 0 0 12px 16px;
     color: white;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7; /* Limit to 3 lines */
 }
 
 .biggerContainer {
-    padding: 0 0 55px 16px;
+    padding: 0 0 14px 16px;
     color: white;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 7; /* Limit to 3 lines */
 }
 
 .container img,
@@ -55,8 +53,8 @@
 }
 
 
-.container h2,
-.biggerContainer h2 {
+.container h3,
+.biggerContainer h3 {
     color: #911AB0;
     /*text-decoration: none; !* Ensure no underline by default *!*/
     /*transition: text-decoration 0.2s ease-in-out;*/

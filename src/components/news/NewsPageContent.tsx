@@ -67,7 +67,7 @@ function NewsPageContent({page}: { page: number }) {
                         <PostCard
                             newsPost={post}
                             biggerContainer={!biggerContainer}
-                            key={post.title}
+                            key={post.id}
                         />
                     );
                 })}
