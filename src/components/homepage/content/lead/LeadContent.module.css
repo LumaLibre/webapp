@@ -48,16 +48,16 @@ html, body {
 html::-webkit-scrollbar {
     display: none;
 }
-.heroText {
-    position: absolute;
-    top: 38%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    font-family: "Paytone One", sans-serif;
-    width: 90vw;
-    padding: 0 5vw;
-}
+/*.heroText {*/
+/*    position: absolute;*/
+/*    top: 38%;*/
+/*    left: 50%;*/
+/*    transform: translate(-50%, -50%);*/
+/*    text-align: center;*/
+/*    font-family: "Paytone One", sans-serif;*/
+/*    width: 90vw;*/
+/*    padding: 0 5vw;*/
+/*}*/
 
 
 .heroText h1 {

@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import { fetchNewsPost } from "../../scripts/newsPosts.ts";
 import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
+import styles from "./NewsPostContent.module.css";
+import Navbar from "../navbar/Navbar.tsx";
 
 
 /**
@@ -30,14 +32,20 @@ function NewsPostContent({ id }: { id: string }) {
 
     return (
         // STYLING: FOR KATARAY
-        <div>
-            <h2>{newsPost.title}</h2>
-            <img src={newsPost.thumbnail} alt={newsPost.title} />
-            {newsPost.getAuthorAvatar()}
-            <p>By {newsPost.author}</p>
-            <p>{newsPost.formatTimestampWithOrdinal()}</p>
-            <p>{newsPost.renderContent()}</p>
-        </div>
+        <section className={styles.newsPostBackground}>
+            <Navbar/>
+            <div className={styles.articleCard}>
+                <img src={newsPost.thumbnail} alt={newsPost.title} className={styles.articleImage}/>
+                <div className={styles.articleCardText}>
+                    <h1>{newsPost.title}</h1>
+                    <div className={styles.articleAuthorContainer}>
+                        <img src={newsPost.getAuthorAvatarURL()} alt={newsPost.author} className={styles.articleAuthorImageContainer}/>
+                        By {newsPost.author} • On {newsPost.formatTimestampWithOrdinal()}
+                    </div>
+                    {newsPost.renderContent()}
+                </div>
+            </div>
+        </section>
     );
 }
 
