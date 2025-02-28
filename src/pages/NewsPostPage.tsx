@@ -1,5 +1,5 @@
 import {useParams} from "react-router-dom";
-import NewsPostContent from "../components/news/NewsPostContent.tsx";
+import NewsPostPageContent from "../components/news/NewsPostPageContent.tsx";
 
 /**
  * A component that displays a news post based on the URL.
@@ -13,7 +13,7 @@ function NewsPostPage() {
     }
 
     return (
-        <NewsPostContent id={id} />
+        <NewsPostPageContent id={id} />
     );
 }
 
