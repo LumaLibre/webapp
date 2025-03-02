@@ -38,8 +38,9 @@
     padding-right: 16px;
     padding-bottom: 12px;
     color: white;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    display: block;
+    /*-webkit-box-orient: vertical;*/
+
 }
 
 .biggerContainer {
@@ -47,8 +48,7 @@
     padding-right: 16px;
     padding-bottom: 14px;
     color: white;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
+    display: block;
 }
 
 .container img,

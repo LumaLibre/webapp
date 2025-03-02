@@ -78,11 +78,17 @@ export class NewsPostContainer {
     }
 
     public renderContentSmall(): JSX.Element {
-        const newContent = this.content.replace(/\n+/g, ' ');
+        let newContent = this.content
+            .replace(/\n+/g, ' ')
+            .replace(/\*/g, '')
+            .replace(/#/g, '')
+            .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '$1') // Remove link but keep text
+            .replace(/!\[([^\]]+)\]\(([^)]+)\)/g, '$1'); // Remove image but keep alt text
 
         const lines: string[] = [];
         let currentLine = '';
         let builtWord = '';
+
         for (const character of newContent) {
             if (lines.length >= NewsPostContainer.MAX_POSTCARD_LINES) {
                 lines[NewsPostContainer.MAX_POSTCARD_LINES - 1] += '...';
@@ -90,16 +96,13 @@ export class NewsPostContainer {
             }
 
             if (currentLine.length >= NewsPostContainer.MAX_CHARACTERS_POSTCARD_LINE) {
-                // Go back until we find a space, remove the word + space and add it to the next line
                 if (!currentLine.includes(' ') || currentLine.endsWith(' ')) {
                     lines.push(currentLine);
                     currentLine = '';
                 }
 
                 for (const localChar of currentLine.split('').reverse()) {
-                    if (localChar === ' ') {
-                        break;
-                    }
+                    if (localChar === ' ') break;
                     builtWord += localChar;
                 }
 
@@ -117,13 +120,15 @@ export class NewsPostContainer {
 
         const done = lines.join('');
 
-        // Convert \n to <br />
         const markdownWithBreaks = done
             .replace(/\n/g, '  \n')
             .replace(/:\w+:/g, (match) => emoji.getUnicode(match) || match);
 
         return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
     }
+
+
+
 
 
 }

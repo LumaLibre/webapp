@@ -64,6 +64,11 @@
     filter: drop-shadow(0 0 2em rgb(96, 0, 159));
 }
 
+.articleCardText a,
+.articleCardText code {
+    color: #911AB0;
+}
+
 .articleCardText strong {
     font-family: 'Poppins', sans-serif;
 }
