@@ -1,4 +1,4 @@
-export const HOST: string = 'http://localhost:7070'; // Change to lumamc.net when deploying!
+export const HOST: string = 'https://dev.lumamc.net'; // Change to lumamc.net when deploying!
 export const API_ENDPOINT: string = `${HOST}/api`;
 
 export const LUMA_DISCORD_GUILD_ID: string = '1188316962258948149';
