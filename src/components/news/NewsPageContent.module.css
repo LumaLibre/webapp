@@ -16,11 +16,13 @@
 .postList {
     position: relative;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Dynamic grid */
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     max-width: 1280px;
     width: 100%;
-    justify-content: center; /* Centers grid items */
+    /*align-content: center;*/
+    justify-content: center;
     gap: 1.5rem;
+
     padding: 1rem;
 }
 
