@@ -1,0 +1,39 @@
+.footerContainer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-color: rgb(22, 22, 22);
+    color: white;
+    padding: 20px;
+    height: auto;
+    width: 100%;
+    gap: 20%;
+}
+
+.footerSection {
+    max-width: 15%;
+}
+
+.footerContainer h3 {
+    font-family: "Paytone One", sans-serif;
+}
+
+.footerButton {
+    margin-top: 10px;
+    background-color: #ff8800;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.footerButton:hover {
+    background-color: #cc6f00;
+}
+
+.footerLine {
+    width: 100%;
+    border: none;
+    border-top: 1px solid #444; /* Subtle line */
+    margin: 20px 0;
+}

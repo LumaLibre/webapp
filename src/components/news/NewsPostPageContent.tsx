@@ -2,14 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import { fetchNewsPost } from "../../scripts/newsPosts.ts";
 import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
 import styles from "./NewsPostPageContent.module.css";
-import Navbar from "../navbar/Navbar.tsx";
 import {JSX} from "react";
 
 
 const newsPostPageSection = (element: JSX.Element)=> {
     return (
         <section className={styles.newsPostBackground}>
-            <Navbar/>
             {element}
         </section>
     );

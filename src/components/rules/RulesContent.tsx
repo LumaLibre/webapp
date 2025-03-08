@@ -1,14 +1,12 @@
 import { useState } from "react";
 import styles from "./RulesContent.module.css";
 import { FaHome, FaUserShield, FaShoppingCart, FaGamepad, FaClipboardList } from "react-icons/fa";
-import Navbar from "../navbar/Navbar.tsx";
 
 const Rules = () => {
     const [activeTab, setActiveTab] = useState("Home");
 
     return (
         <div>
-            <Navbar />
             <div className={styles.rulesBackground}>
                 <div className={styles.rulesContainer}>
                     {/* Sidebar (Restored Original Look) */}

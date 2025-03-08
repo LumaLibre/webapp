@@ -3,14 +3,12 @@ import styles from "./NewsPageContent.module.css";
 import PostCard from "./content/postcard/PostCard.tsx";
 import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
 import {fetchAllNewsPosts} from "../../scripts/newsPosts.ts";
-import Navbar from "../navbar/Navbar.tsx";
 import {JSX} from "react";
 
 
 const newsStyleSection = (element: JSX.Element) => {
     return (
         <section className={styles.newsPageBackground}>
-            <Navbar/>
             {element}
         </section>
     );

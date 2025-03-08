@@ -7,8 +7,8 @@ import emoji from 'emoji-dictionary';
 
 export class NewsPostContainer {
 
-    static MAX_CHARACTERS_POSTCARD_LINE: number = 30;
-    static MAX_POSTCARD_LINES: number = 7;
+    private static MAX_CHARACTERS_POSTCARD_LINE: number = 30;
+    private static MAX_POSTCARD_LINES: number = 7;
 
     id: string;
     title: string;
@@ -126,9 +126,6 @@ export class NewsPostContainer {
 
         return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
     }
-
-
-
 
 
 }

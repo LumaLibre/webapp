@@ -1,12 +1,11 @@
 import styles from "./Header.module.css";
-import Navbar from "../../navbar/Navbar.tsx";
+// import Navbar from "../../navbar/Navbar.tsx";
 import logo from "../../../assets/LumaLogo.png";
 import ipButton from "../../../assets/IPButton.png";
 
 function Header() {
     return (
         <section className={styles.heroSection}>
-            <Navbar /> {/* Include the navbar here */}
 
             <section className={styles.logoSection}>
                 <img src={logo} alt="Luma Logo" className={styles.logoImage} />
