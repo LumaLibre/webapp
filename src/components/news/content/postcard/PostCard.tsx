@@ -1,5 +1,5 @@
 import styles from "./PostCard.module.scss";
-import {NewsPostContainer} from "../../../../scripts/model/NewsPostContainer.tsx";
+import {NewsPostContainer} from "@/scripts/model/NewsPostContainer.tsx";
 import {useNavigate} from "react-router-dom";
 
 

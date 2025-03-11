@@ -30,7 +30,6 @@ const Rules = () => {
                         </ul>
                     </div>
 
-                    {/* Rules Content (Restored Original Look) */}
                     <div className={styles.rulesContent}>
                         <h1>LumaMC's Rules</h1>
                         <p><strong>
