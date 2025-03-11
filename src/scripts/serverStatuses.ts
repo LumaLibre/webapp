@@ -1,4 +1,4 @@
-import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "../constants.ts";
+import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "@/constants.ts";
 
 export async function fetchServerStatus(): Promise<string> {
     const failed = 'Failed to fetch server status';

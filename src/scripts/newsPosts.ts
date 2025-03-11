@@ -1,5 +1,5 @@
 import {NewsPostContainer} from "./model/NewsPostContainer.tsx";
-import {API_ENDPOINT} from "../constants.ts";
+import {API_ENDPOINT} from "@/constants.ts";
 
 const endpoint: string = `${API_ENDPOINT}/news/`;
 

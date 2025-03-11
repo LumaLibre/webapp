@@ -1,8 +1,8 @@
 import {useParams} from "react-router-dom";
-import NewsPostPageContent from "../components/news/NewsPostPageContent.tsx";
+import NewsPostPageContent from "@/components/news/NewsPostPageContent.tsx";
 import {useEffect} from "react";
-import Navbar from "../components/navbar/Navbar.tsx";
-import Footer from "../components/footer/Footer.tsx";
+import Navbar from "@/components/navbar/Navbar.tsx";
+import Footer from "@/components/footer/Footer.tsx";
 
 /**
  * A component that displays a news post based on the URL.

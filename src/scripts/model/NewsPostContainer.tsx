@@ -1,8 +1,7 @@
 import {MINOTAR_HELM_API} from "@/constants.ts";
 import {JSX} from "react";
 import ReactMarkdown from 'react-markdown';
-// eslint-disable-next-line @typescript-eslint/ban-ts-comment
-// @ts-expect-error
+// @ts-ignore
 import emoji from 'emoji-dictionary';
 
 export class NewsPostContainer {

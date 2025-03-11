@@ -1,7 +1,7 @@
-import RulesContent from "../components/rules/RulesContent.tsx";
+import RulesContent from "@/components/rules/RulesContent.tsx";
 import {useEffect} from "react";
-import Footer from "../components/footer/Footer.tsx";
-import Navbar from "../components/navbar/Navbar.tsx";
+import Footer from "@/components/footer/Footer.tsx";
+import Navbar from "@/components/navbar/Navbar.tsx";
 
 function RulesPage() {
     useEffect(() => {
