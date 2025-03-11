@@ -1,8 +1,8 @@
 import styles from "./LeadContent.module.css";
-import groundImg from "../../../../assets/UndergroundBg.png";
-import houseImg from "../../../../assets/House.png";
-import crossPlatformImg from "../../../../assets/CrossplatformLuma.png";
-import eventImg from "../../../../assets/EventLuma.png";
+import groundImg from "@/assets/UndergroundBg.png";
+import houseImg from "@/assets/House.png";
+import crossPlatformImg from "@/assets/CrossplatformLuma.png";
+import eventImg from "@/assets/EventLuma.png";
 
 function LeadContent() {
     return (

@@ -1,13 +1,10 @@
-import styles from "./PostCard.module.css";
+import styles from "./PostCard.module.scss";
 import {NewsPostContainer} from "../../../../scripts/model/NewsPostContainer.tsx";
 import {useNavigate} from "react-router-dom";
 
 
 function NewsPost({ newsPost, biggerContainer }: { newsPost: NewsPostContainer, biggerContainer: boolean}) {
-    let container = styles.container;
-    if (biggerContainer) {
-        container = styles.biggerContainer;
-    }
+    const container = !biggerContainer ? styles.container : styles.biggerContainer;
     const navigate = useNavigate();
 
     return (

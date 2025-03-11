@@ -1,0 +1,63 @@
+@import "../../App.module.scss";
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.newsPostBackground {
+    @include artBackground("../../assets/SpaceBg.png");
+}
+
+.articleCard {
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 10px; // Rounded corners
+    background: rgb(22, 22, 22);
+    margin-top: 50px;
+    padding-bottom: 30px;
+}
+
+.articleAuthorContainer {
+    font-family: "Paytone One", sans-serif;
+    display: flex;
+    align-items: center;
+    color: rgba(205,184,208);
+    margin-bottom: 20px; /* Adjust the value as needed */
+}
+
+.articleCardText {
+    font-size: 1.1rem;
+    padding-left: 12.5%;
+    width: 60vw;
+    color: rgba(205, 184, 208);
+
+    h1 {
+        text-align: center;
+        color: #911AB0;
+        font-family: "Paytone One", sans-serif;
+        filter: drop-shadow(0 0 2em rgb(96, 0, 159));
+    }
+
+    a,
+    code {
+        color: #911AB0;
+    }
+
+    strong {
+        font-family: 'Poppins', sans-serif;
+    }
+}
+
+
+.articleImage {
+    width: 100%;
+    height: 400px;
+    object-fit: cover; // image fills the height while maintaining aspect ratio
+    object-position: center; // center the image
+    border-radius: 10px 10px 0 0; // Rounded corners on top
+}
+.articleAuthorImageContainer {
+    border-radius: 10%;
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+}
+

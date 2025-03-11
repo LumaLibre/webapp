@@ -1,3 +1,16 @@
+@mixin artBackground($bg-url) {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Keeps content aligned at the top */
+    min-height: 100vh; /* Ensure it occupies full viewport height */
+    position: relative; /* Ensure that children can be absolutely positioned inside */
+    padding-top: 80px;
+    padding-bottom: 60px;
+    background-image: url($bg-url);
+    background-size: cover;
+    background-position: center;
+}
+
 .appContainer {
     display: flex;
     flex-direction: column;

@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import styles from "./App.module.css";
+import styles from "./App.module.scss";
 import MainPage from "./pages/MainPage.tsx";
 import RulesPage from "./pages/RulesPage.tsx";
 import NewsPostPage from "./pages/NewsPostPage.tsx";

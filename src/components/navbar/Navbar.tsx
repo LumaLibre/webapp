@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./Navbar.module.css";
+import styles from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
     faHouse,

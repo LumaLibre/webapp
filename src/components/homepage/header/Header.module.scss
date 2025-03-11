@@ -1,0 +1,99 @@
+@import "@/App.module.scss";
+
+.headerBackground {
+    @include artBackground("@/assets/LumaBackground.png");
+    // Overriding properties
+    background-repeat: no-repeat;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+
+.logoSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    top: 10vh;
+}
+
+.logoImage {
+    width: 38vw;
+    max-width: 500px;
+    height: auto;
+    transition: transform 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+    }
+}
+
+.IPButtonSection {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 9vh; // Adjust to make it look good
+
+}
+
+.IPButtonContainer {
+    position: relative;
+    display: inline-block;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.IPButtonImg {
+    width: 22vw;
+    max-width: 450px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.IPText {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 1.8vw;
+    font-weight: bold;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    white-space: nowrap;
+    transition: transform 0.3s ease;
+}
+
+/* Hover effect for combined button and text */
+.IPButtonContainer:hover .IPButtonImg {
+    transform: scale(1.05); /* Slightly increases the button size */
+}
+
+.IPButtonContainer:hover .IPText {
+    transform: translate(-50%, -50%) scale(1.05); /* Slightly increases the text size */
+}
+
+/* Adjust positioning for smaller screens */
+@media (max-width: 768px) {
+    .IPButtonImg {
+        width: 60vw; /* Slightly larger on small screens */
+        max-width: 350px;
+    }
+
+    .IPButtonSection {
+        margin-top: 8vh; /* Moves it a bit higher */
+    }
+
+    .IPText {
+        font-size: 3.5vw; /* Adjusts text size for mobile */
+    }
+
+    .logoImage {
+        width: 80vw; /* Increase relative size on smaller screens */
+    }
+}

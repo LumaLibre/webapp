@@ -1,0 +1,111 @@
+@import "../../App.module.scss";
+
+.newsPageBackground {
+    @include artBackground("../../assets/SpaceBg.png");
+}
+
+
+.postList {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    max-width: 1280px;
+    width: 100%;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 1rem;
+
+    @media (max-width: 1024px) { // Tablet
+        grid-template-columns: repeat(2, minmax(300px, 1fr));
+    }
+
+    @media (max-width: 640px) { // Mobile
+        grid-template-columns: repeat(1, minmax(300px, 1fr));
+    }
+}
+
+
+// Carousel nav
+@mixin carouselNavStyles($bottom) {
+    position: absolute;
+    bottom: $bottom;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+/* Carousel Navigation - Fixed at Bottom */
+.carouselNav {
+    @include carouselNavStyles(-53px);
+}
+
+/* Ensuring it doesn't move when cards shift */
+.halfCardsCarouselNav {
+    @include carouselNavStyles(-400px);
+}
+
+
+%carouselButton {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    filter: drop-shadow(-3px 4px rgba(0, 0, 0, 0.15));
+    height: 1.75rem;
+    width: 1.75rem;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.carouselNavBack {
+    @extend %carouselButton;
+}
+
+.carouselNavForward {
+    @extend %carouselButton;
+    transform: scaleX(-1); // Flip horizontally
+}
+
+.carouselArrow {
+    @extend %carouselButton;
+    box-sizing: border-box;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background-color: rgb(254, 238, 208);
+    bottom: 0.25rem;
+    left: 0;
+    mask: url("../../assets/carouselArrow.svg") no-repeat center / cover;
+    position: absolute;
+    width: 1.75rem;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.carouselNavDot {
+    box-sizing: border-box;
+    border: none;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(254, 238, 208);
+    border-radius: 9999px;
+    cursor: pointer;
+    position: relative;
+    height: 0.75rem;
+    width: 0.75rem;
+    transform: translateY(-0.25rem);
+    filter: drop-shadow(-3px 4px rgba(0, 0, 0, 0.15));
+    transition-duration: 0.15s;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
