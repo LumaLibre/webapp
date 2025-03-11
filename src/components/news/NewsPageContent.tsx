@@ -70,9 +70,7 @@ function NewsPageContent({page}: { page: number }) {
                     );
                 })}
                 <div className={carouselNav}>
-                    {
-                        // redirect to previous page if page is not 1 (/news?page=<page >)
-                    }
+                    {/* redirect to the previous page if page is not 1 (/news?page=<page >) */}
                     <a className={styles.carouselNavBack} href={`${pageRef}${page - 1}`}>
                         <div className={styles.carouselArrow}/>
                     </a>

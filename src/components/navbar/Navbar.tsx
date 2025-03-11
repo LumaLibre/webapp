@@ -33,43 +33,46 @@ function Navbar() {
             <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
                 <li className={styles.navItem}>
                     <Link to="/" className={styles.navLink}>
-                        <FontAwesomeIcon icon={faHouse} className={styles.navIcon} />
+                        <FontAwesomeIcon icon={faHouse} className={styles.navIcon}/>
                         Home
                     </Link>
                 </li>
                 <li className={styles.navItem}>
                     <Link to="/rules" className={styles.navLink}>
-                        <FontAwesomeIcon icon={faGavel} className={styles.navIcon} />
+                        <FontAwesomeIcon icon={faGavel} className={styles.navIcon}/>
                         Rules
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faCheckCircle} className={styles.navIcon} />
+                    <FontAwesomeIcon icon={faCheckCircle} className={styles.navIcon}/>
                     Vote
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://store.lumamc.net" className={styles.navLink} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faStore} className={styles.navIcon} />
+                    <Link to="/news" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faRocket} className={styles.navIcon}/>
+                        News
+                    </Link>
+                </li>
+                <li className={styles.navItem}>
+                    <a href="https://store.lumamc.net" className={styles.navLink} target="_blank"
+                       rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faStore} className={styles.navIcon}/>
                         Store
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://map.lumamc.net" className={styles.navLink} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faMap} className={styles.navIcon} />
+                    <a href="https://map.lumamc.net" className={styles.navLink} target="_blank"
+                       rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faMap} className={styles.navIcon}/>
                         Map
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://wiki.lumamc.net" className={styles.navLink} target="_blank" rel="noopener noreferrer">
-                        <FontAwesomeIcon icon={faBook} className={styles.navIcon} />
+                    <a href="https://wiki.lumamc.net" className={styles.navLink} target="_blank"
+                       rel="noopener noreferrer">
+                        <FontAwesomeIcon icon={faBook} className={styles.navIcon}/>
                         Wiki
                     </a>
-                </li>
-                <li className={styles.navItem}>
-                    <Link to="/news" className={styles.navLink}>
-                        <FontAwesomeIcon icon={faRocket} className={styles.navIcon} />
-                        News
-                    </Link>
                 </li>
             </ul>
         </nav>
