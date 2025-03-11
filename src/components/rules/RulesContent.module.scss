@@ -1,0 +1,106 @@
+@import "@/App.module.scss";
+
+.rulesBackground {
+    @include artBackground("@/assets/UndergroundBg.png");
+    padding-bottom: 0;
+}
+
+// Main container
+.rulesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 90%;
+    max-width: 1200px;
+    padding: 20px;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+}
+
+// Sidebar
+.rulesSidebar {
+    width: 250px;
+    background-color: rgba(17, 17, 17, 0.8);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    position: sticky;
+    top: 20px;
+    height: auto;
+
+    h2 {
+        text-align: center;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    li {
+        display: flex;
+        align-items: center;
+        font-size: 1.1rem;
+        color: #bbb;
+        padding: 10px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: 0.2s;
+
+        &:hover,
+        &.active {
+            color: white;
+            background-color: #444;
+        }
+
+        svg {
+            margin-right: 10px;
+            color: #a855f7;
+        }
+    }
+
+    @media (max-width: 768px) {
+        width: calc(100% - 40px);
+        padding: 15px;
+        position: relative;
+        margin-bottom: 20px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+// Rules Content
+.rulesContent {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: rgba(17, 17, 17, 0.8);
+    border-radius: 10px;
+    margin-left: 20px;
+    max-width: 900px;
+    max-height: 85vh;
+    overflow-y: auto;
+
+    h1 {
+        font-size: 2.5rem;
+        color: white;
+    }
+
+    p {
+        font-size: 1.2rem;
+        color: #ddd;
+        margin-top: 15px;
+    }
+
+    strong {
+        color: white;
+    }
+
+    @media (max-width: 768px) {
+        width: calc(100% - 40px);
+        margin: 20px auto 0;
+        padding: 20px;
+    }
+}

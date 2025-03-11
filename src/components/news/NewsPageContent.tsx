@@ -1,8 +1,8 @@
 import {useQuery} from "@tanstack/react-query";
 import styles from "./NewsPageContent.module.scss";
 import PostCard from "./content/postcard/PostCard.tsx";
-import {NewsPostContainer} from "../../scripts/model/NewsPostContainer.tsx";
-import {fetchAllNewsPosts} from "../../scripts/newsPosts.ts";
+import {NewsPostContainer} from "@/scripts/model/NewsPostContainer.tsx";
+import {fetchAllNewsPosts} from "@/scripts/newsPosts.ts";
 import {JSX} from "react";
 
 

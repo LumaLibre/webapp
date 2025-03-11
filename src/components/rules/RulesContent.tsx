@@ -1,5 +1,5 @@
 import { useState } from "react";
-import styles from "./RulesContent.module.css";
+import styles from "./RulesContent.module.scss";
 import { FaHome, FaUserShield, FaShoppingCart, FaGamepad, FaClipboardList } from "react-icons/fa";
 
 const Rules = () => {
@@ -9,7 +9,6 @@ const Rules = () => {
         <div>
             <div className={styles.rulesBackground}>
                 <div className={styles.rulesContainer}>
-                    {/* Sidebar (Restored Original Look) */}
                     <div className={styles.rulesSidebar}>
                         <h2>Rules</h2>
                         <ul>

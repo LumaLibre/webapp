@@ -1,4 +1,4 @@
-import styles from "./Footer.module.css"
+import styles from "./Footer.module.scss"
 
 function Footer() {
     return (
@@ -11,9 +11,9 @@ function Footer() {
 
             <div className={styles.footerSection}>
                 <h3>Links</h3>
-                <p>blahblah</p>
-                <p>blahblah</p>
-                <p>blahblah</p>
+                <p>Link #1</p>
+                <p>Link #2</p>
+                <p>Link #3</p>
             </div>
         </div>
     );

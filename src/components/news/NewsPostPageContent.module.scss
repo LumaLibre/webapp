@@ -1,8 +1,7 @@
-@import "../../App.module.scss";
-@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import "@/App.module.scss";
 
 .newsPostBackground {
-    @include artBackground("../../assets/SpaceBg.png");
+    @include artBackground("@/assets/SpaceBg.png");
 }
 
 .articleCard {
