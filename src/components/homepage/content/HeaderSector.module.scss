@@ -11,3 +11,13 @@
   max-height: 100vh;
   object-fit: contain;
 }
+
+@media (max-width: 768px) {
+  .contentBackground {
+    top: 55%; /* Move text even lower on smaller screens */
+  }
+  .contentImage {
+    height: 100vh;
+    object-fit: cover;
+  }
+}
