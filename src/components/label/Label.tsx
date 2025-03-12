@@ -24,30 +24,31 @@ const Label = () => {
         discordStatus = 'Loading...'
     }
 
-    const [mcHoverText, mcSetHoverText] = useState(LUMA_IP_ADDRESS.toUpperCase());
-    const [discordHoverText, discordSetHoverText] = useState(LUMA_DISCORD_INV_SHORT.toUpperCase());
+    const [mcHoverText, mcSetHoverText] = useState(LUMA_IP_ADDRESS);
+    const [discordHoverText, discordSetHoverText] = useState(LUMA_DISCORD_INV_SHORT);
 
     return (
         <>
             <img src={logo} alt="Luma Logo" className={styles.logoImage}/>
 
-            <div className={styles.btnContainer}>
+            <div className={styles.playBtnContainer}>
                 <div className={styles.playBtnImg}
                      onMouseEnter={() => mcSetHoverText("Click to copy IP!")}
-                     onMouseLeave={() => mcSetHoverText(LUMA_IP_ADDRESS.toUpperCase())}
+                     onMouseLeave={() => mcSetHoverText(LUMA_IP_ADDRESS)}
                      onClick={() => {
                          navigator.clipboard.writeText(LUMA_IP_ADDRESS);
                          mcSetHoverText("Copied, see you there!");
-                         setTimeout(() => mcSetHoverText("Click to copy IP!"), 1000);
                      }}
                 >
                     <img src={playBtn} alt="Play Button"/>
                     <h2>{mcStatus}</h2>
                     <h3>{mcHoverText}</h3>
                 </div>
+            </div>
+            <div className={styles.discordBtnContainer}>
                 <div className={styles.discordBtnImg}
                      onMouseEnter={() => discordSetHoverText("Click to join!")}
-                     onMouseLeave={() => discordSetHoverText(LUMA_DISCORD_INV_SHORT.toUpperCase())}
+                     onMouseLeave={() => discordSetHoverText(LUMA_DISCORD_INV_SHORT)}
                      onClick={() => {
                          window.open(`https://${LUMA_DISCORD_INV_SHORT}`, "_blank");
                          discordSetHoverText("Woo, see you there!");
@@ -60,6 +61,6 @@ const Label = () => {
             </div>
         </>
     );
-}
+};
 
 export default Label;

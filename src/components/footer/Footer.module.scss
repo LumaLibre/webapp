@@ -1,22 +1,151 @@
-.footerContainer {
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    background-color: rgb(22, 22, 22);
-    color: white;
-    padding: 20px;
-    height: auto;
-    width: 100%;
-    gap: 20%;
 
-    h3 {
-        font-family: "Paytone One", sans-serif;
+.footerContainer {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    padding: 0;
+    display: block;
+    margin: auto 0 0;
+}
+
+.footerTop {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    background-color: rgb(30, 29, 29);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.footerTopItems {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 40px);
+    width: 1280px;
+}
+
+.footerTopItemsLeft {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    display: flex;
+    align-items: center;
+    margin-right: auto;
+}
+
+.footerTopSocialLinks {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    display: flex;
+    align-items: center;
+    margin-left: 60%;
+    gap: 1.75rem;
+}
+
+.logoSmall {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    padding: 0;
+    vertical-align: baseline;
+    cursor: pointer;
+    width: 50px;
+    height: 50px;
+    margin: 0 1rem 0 3rem;
+    position: relative;
+    top: -0.125rem;
+}
+
+.serverCount {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+    cursor: pointer;
+    position: relative;
+    top: -0.125rem;
+
+     h4 {
+         font-size: 100%;
+         color: #911AB0;
+         font-family: "Paytone One", sans-serif;
+         text-transform: uppercase;
+     }
+
+    h5 {
+        margin-top: -20px;
+        font-family: 'Poppins', sans-serif;
+        color: rgba(205, 184, 208);
+        font-size: 85%;
+        text-transform: uppercase;
+        white-space: nowrap;
+    }
+
+}
+
+.footerBottomContainer {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(22, 22, 22);
+    padding-bottom: 2rem;
+    padding-top: 2.75rem;
+}
+
+.footerBottom {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: calc(100% - 40px);
+    width: 1280px;
+}
+
+.footerBottomTextContainer {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        box-sizing: border-box;
+        font: inherit;
+        margin: 0;
+        padding: 0;
+        vertical-align: baseline;
+        color: rgb(156 149 139);
+        font-size: 0.83rem;
+        font-weight: 700;
+        margin-top: 0.25rem;
     }
 }
 
-.footerSection {
-    max-width: 15%;
-}
+
+
+
+
 
 .footerButton {
     margin-top: 10px;
@@ -32,10 +161,3 @@
     }
 }
 
-
-.footerLine {
-    width: 100%;
-    border: none;
-    border-top: 1px solid #444; /* Subtle line */
-    margin: 20px 0;
-}

@@ -68,9 +68,9 @@
 @mixin littleImgParent {
     position: absolute;
     transition: transform 0.3s ease;
-    &:hover {
-        transform: scale(1.03);
-    }
+    //&:hover {
+    //    transform: scale(1.03);
+    //}
     @media (max-width: 768px) { // Phone
         display: none;
     }

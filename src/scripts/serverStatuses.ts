@@ -3,7 +3,7 @@ import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "@/constants.ts";
 const failed = '?';
 
 export async function fetchServerStatus(): Promise<string> {
-    const pO = 'PLAYERS ONLINE';
+    const playersOnline = 'Players Online';
 
     try {
         // Fetch data from the API
@@ -16,18 +16,18 @@ export async function fetchServerStatus(): Promise<string> {
         }
         const data = await response.json();
         if (data.online) { // are we online?
-            return `${data.players.online.toString()} ${pO}`;
+            return `${data.players.online.toString()} ${playersOnline}`;
         } else {
-            return `0 ${pO}`;
+            return `0 ${playersOnline}`;
         }
     } catch (error) {
-        console.error('Error fetching Luma\'s server status:', error);
-        return `${failed} ${pO}`;
+        console.error("Error fetching Luma's server status:", error);
+        return `${failed} ${playersOnline}`;
     }
 }
 
 export async function fetchDiscordStatus(): Promise<string> {
-    const usersOnline = 'USERS ONLINE';
+    const usersOnline = 'Users Online';
 
     try {
         const response = await fetch(LUMA_DISCORD_ENDPOINT);
@@ -38,7 +38,7 @@ export async function fetchDiscordStatus(): Promise<string> {
         const data = await response.json();
         return `${data.presence_count.toString()} ${usersOnline}`;
     } catch (error) {
-        console.error('Error fetching Discord status:', error);
+        console.error("Error fetching Luma's Discord status:", error);
         return `${failed} ${usersOnline}`;
     }
 }

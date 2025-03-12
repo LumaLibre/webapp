@@ -1,11 +1,11 @@
 // Logo section
 .logoImage {
-  position: relative;
+  position: absolute;
   display: flex;
   justify-content: center;
   align-items: center;
   //width: 100%;
-  top: -2vh;
+  top: 10vh;
   width: 38vw;
   max-width: 330px;
   height: auto;
@@ -22,15 +22,25 @@
 }
 
 // Button container
-.btnContainer {
+@mixin btnContainer {
   justify-content: center;
   align-items: center;
-  width: 100%;
+  width: 20%;
   margin-top: 5vh;
   position: absolute;
   display: inline-block;
   text-align: center;
   transition: transform 0.3s ease;
+}
+
+.playBtnContainer {
+  @include btnContainer;
+  margin-right: 60vh;
+}
+
+.discordBtnContainer {
+  @include btnContainer;
+  margin-left: 60vh;
 }
 
 
@@ -41,19 +51,23 @@
 
   h2 {
     all: unset;
+    white-space: nowrap;
     position: absolute;
     top: 20%;
     font-size: 100%;
     color: #911AB0;
     font-family: "Paytone One", sans-serif;
+    text-transform: uppercase;
   }
   h3 {
     all: unset;
+    white-space: nowrap;
     position: absolute;
     top: 45%;
     font-family: 'Poppins', sans-serif;
     color: rgba(205, 184, 208);
     font-size:85%;
+    text-transform: uppercase;
   }
   img {
     width: 22vw;
@@ -75,15 +89,15 @@
   @include btnParent;
 
   h2 {
-    right: 72.5%;
+    right: 70%;
   }
   h3 {
-    right: 72.5%;
+    right: 70%;
   }
 
   img {
     max-width: 80px;
-    margin-right: 30vh;
+
   }
 }
 
@@ -91,13 +105,24 @@
   @include btnParent;
 
   h2 {
-    left: 72.2%;
+    left: 70%;
   }
   h3 {
-    left: 72.4%;
+    left: 70.1%;
   }
   img {
     max-width: 75px;
-    margin-left: 30vh;
+
   }
+}
+
+.hoverText {
+  transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(5px); /* Moves text slightly down when hidden */
 }

@@ -3,11 +3,13 @@ import { fetchNewsPost } from "@/scripts/newsPosts.ts";
 import {NewsPostContainer} from "@/scripts/model/NewsPostContainer.tsx";
 import styles from "./NewsPostPageContent.module.scss";
 import {JSX} from "react";
+import Label from "@/components/label/Label.tsx";
 
 
 const newsPostPageSection = (element: JSX.Element)=> {
     return (
         <section className={styles.newsPostBackground}>
+            <Label />
             {element}
         </section>
     );
