@@ -106,4 +106,7 @@ html, body {
     overflow-x: hidden; /* Prevents horizontal scrolling */
     overflow-y: auto;   /* Allows vertical scrolling */
 }
+html::-webkit-scrollbar {
+    display: none;
+}
 
