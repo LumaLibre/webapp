@@ -37,6 +37,7 @@
 
 @mixin btnParent {
   all: unset;
+  cursor: pointer;
 
   h2 {
     all: unset;
