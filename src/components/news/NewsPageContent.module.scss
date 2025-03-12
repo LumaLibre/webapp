@@ -19,7 +19,7 @@
         grid-template-columns: repeat(2, minmax(300px, 1fr));
     }
 
-    @media (max-width: 640px) { // Mobile
+    @media (max-width: 768px) { // Mobile
         grid-template-columns: repeat(1, minmax(300px, 1fr));
     }
 }

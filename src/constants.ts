@@ -2,6 +2,7 @@ export const HOST: string = 'https://dev.lumamc.net'; // Change to lumamc.net wh
 export const API_ENDPOINT: string = `${HOST}/api`;
 
 export const LUMA_DISCORD_GUILD_ID: string = '1188316962258948149';
+export const LUMA_DISCORD_INV_SHORT: string = 'lumamc.net/chat';
 export const LUMA_IP_ADDRESS: string = 'play.lumamc.net';
 
 export const LUMA_SERVERSTATS_ENDPOINT: string = `https://api.mcsrvstat.us/2/${LUMA_IP_ADDRESS}`;

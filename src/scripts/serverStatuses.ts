@@ -1,7 +1,9 @@
 import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "@/constants.ts";
 
+const failed = '?';
+
 export async function fetchServerStatus(): Promise<string> {
-    const failed = 'Failed to fetch server status';
+    const pO = 'PLAYERS ONLINE';
 
     try {
         // Fetch data from the API
@@ -14,29 +16,29 @@ export async function fetchServerStatus(): Promise<string> {
         }
         const data = await response.json();
         if (data.online) { // are we online?
-            return data.players.online.toString();
+            return `${data.players.online.toString()} ${pO}`;
         } else {
-            return '0';
+            return `0 ${pO}`;
         }
     } catch (error) {
         console.error('Error fetching Luma\'s server status:', error);
-        return failed;
+        return `${failed} ${pO}`;
     }
 }
 
 export async function fetchDiscordStatus(): Promise<string> {
-    const failed = 'Failed to fetch Discord status';
+    const usersOnline = 'USERS ONLINE';
 
     try {
         const response = await fetch(LUMA_DISCORD_ENDPOINT);
         if (!response.ok) {
             console.error('Failed to fetch Discord status:', response.statusText);
-            return failed;
+            return `${failed} ${usersOnline}`;
         }
         const data = await response.json();
-        return data.presence_count.toString();
+        return `${data.presence_count.toString()} ${usersOnline}`;
     } catch (error) {
         console.error('Error fetching Discord status:', error);
-        return failed;
+        return `${failed} ${usersOnline}`;
     }
 }
