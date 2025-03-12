@@ -72,15 +72,3 @@
         width: 10%;
     }
 }
-
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    min-height: 100vh;
-    overflow-x: hidden; /* Prevents horizontal scrolling */
-    overflow-y: auto;   /* Allows vertical scrolling */
-}
-html::-webkit-scrollbar {
-    display: none;
-}
