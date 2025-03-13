@@ -6,6 +6,7 @@ import styles from "./Label.module.scss";
 import playBtn from "@/assets/PlayBtn.webp";
 import discordBtn from "@/assets/DiscordBtn.webp";
 import {useQuery} from "@tanstack/react-query";
+import {Link} from "react-router-dom";
 
 const Label = () => {
     // querying
@@ -29,7 +30,9 @@ const Label = () => {
 
     return (
         <>
-            <img src={logo} alt="Luma Logo" className={styles.logoImage}/>
+            <Link to="/">
+                <img src={logo} alt="Luma Logo" className={styles.logoImage}/>
+            </Link>
 
             <div className={styles.playBtnContainer}>
                 <div className={styles.playBtnImg}

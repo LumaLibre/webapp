@@ -8,6 +8,8 @@ import ConductRules from "@/components/rules/content/ConductRules.tsx";
 import StoreRules from "@/components/rules/content/StoreRules.tsx";
 import GameplayRules from "@/components/rules/content/GameplayRules.tsx";
 import PoliciesRules from "@/components/rules/content/PoliciesRules.tsx";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import {faFlag, faComments, faStore, faGamepad, faClipboardList} from "@fortawesome/free-solid-svg-icons";
 
 
 export const quickLink = (text: string, link: string) => {
@@ -18,11 +20,11 @@ export const quickLink = (text: string, link: string) => {
 
 
 const tabs = [
-    {name: "Overview", component: <OverviewRules/>},
-    {name: "Conduct", component: <ConductRules/>},
-    {name: "Store", component: <StoreRules/>},
-    {name: "Gameplay", component: <GameplayRules/>},
-    {name: "Policies", component: <PoliciesRules/>},
+    {name: "Overview", component: <OverviewRules/>, icon: faFlag},
+    {name: "Conduct", component: <ConductRules/>, icon: faComments},
+    {name: "Store", component: <StoreRules/>, icon: faStore},
+    {name: "Gameplay", component: <GameplayRules/>, icon: faGamepad},
+    {name: "Policies", component: <PoliciesRules/>, icon: faClipboardList},
 ];
 
 function Rules() {
@@ -46,7 +48,8 @@ function Rules() {
                             className={styles.rulesCardSelectorNavItem}
                             onClick={() => setActiveTab(tab.name)}
                         >
-                            <h2>{tab.name}</h2>
+                            <FontAwesomeIcon icon={tab.icon} className={styles.iconSmall} />
+                            <h2 className={styles.inlineText}>{tab.name}</h2>
                         </a>
                     ))}
                 </div>
