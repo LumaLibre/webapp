@@ -18,7 +18,7 @@
     font-family: "Paytone One", sans-serif;
     display: flex;
     align-items: center;
-    color: rgba(205,184,208);
+    color: $secondary-color;
     margin-top: 70px;
     margin-bottom: 20px;
 }
@@ -27,18 +27,18 @@
     font-size: 1.1rem;
     padding-left: 12.5%;
     width: 60vw;
-    color: rgba(205, 184, 208);
+    color: $secondary-color;
 
     h1 {
         text-align: center;
-        color: #911AB0;
+        color: $primary-color;
         font-family: "Paytone One", sans-serif;
         filter: drop-shadow(0 0 2em rgb(96, 0, 159));
     }
 
     a,
     code {
-        color: #911AB0;
+        color: $primary-color;
     }
 
     strong {

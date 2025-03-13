@@ -1,5 +1,5 @@
 import {fetchDiscordStatus, fetchServerStatus} from "@/scripts/serverStatuses.ts";
-import {LUMA_DISCORD_INV_SHORT, LUMA_IP_ADDRESS} from "@/constants.ts";
+import {DISCORD_INV, DISCORD_INV_SHORT, LUMA_IP_ADDRESS} from "@/constants.ts";
 import {useState} from "react";
 import logo from "@/assets/LumaLogo.png";
 import styles from "./Label.module.scss";
@@ -25,7 +25,7 @@ const Label = () => {
     }
 
     const [mcHoverText, mcSetHoverText] = useState(LUMA_IP_ADDRESS);
-    const [discordHoverText, discordSetHoverText] = useState(LUMA_DISCORD_INV_SHORT);
+    const [discordHoverText, discordSetHoverText] = useState(DISCORD_INV_SHORT);
 
     return (
         <>
@@ -48,9 +48,9 @@ const Label = () => {
             <div className={styles.discordBtnContainer}>
                 <div className={styles.discordBtnImg}
                      onMouseEnter={() => discordSetHoverText("Click to join!")}
-                     onMouseLeave={() => discordSetHoverText(LUMA_DISCORD_INV_SHORT)}
+                     onMouseLeave={() => discordSetHoverText(DISCORD_INV_SHORT)}
                      onClick={() => {
-                         window.open(`https://${LUMA_DISCORD_INV_SHORT}`, "_blank");
+                         window.open(DISCORD_INV, "_blank");
                          discordSetHoverText("Woo, see you there!");
                      }}
                 >

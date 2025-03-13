@@ -35,6 +35,7 @@
 
 .rulesCardSelector {
     @include rulesCardParent;
+    justify-content: flex-start;
     width: 20%;
     margin-right: 60%;
 
@@ -49,10 +50,48 @@
     }
 }
 
+.rulesCardSelectorTitle {
+    text-align: center;
+}
+
+.rulesCardSelectorNavItem {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1px;
+    box-sizing: border-box;
+    transition: 0.25s;
+    color: $primary-color;
+    padding: 0.5rem calc(1.75rem - 5px);
+    display: block;
+    border-left: 5px solid $primary-color;
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+        background-color: rgba($primary-color, 0.1); /* Light background on hover */
+        border-left: 5px solid $primary-color; /* Highlight the left border */
+    }
+
+    &:active {
+        transform: scale(0.98); /* Slight shrink effect on click */
+        background-color: rgba($primary-color, 0.2); /* Darker background when active */
+    }
+}
+
 .rulesCard {
     @include rulesCardParent;
+    overflow: auto;
     width: 57%;
     margin-left: 24%;
+
+    // Hide for modern browsers
+    &::-webkit-scrollbar {
+        display: none;
+    }
+    // Hide for Firefox
+    scrollbar-width: none;
+    // Hide for IE and Edge (legacy)
+    -ms-overflow-style: none;
 
     @media (max-width: 768px) { // Phone
         margin-top: 47vh;
@@ -68,6 +107,8 @@
 @mixin littleImgParent {
     position: absolute;
     transition: transform 0.3s ease;
+    width: 10%;
+    z-index: 10; // Make sure it stays on top
     //&:hover {
     //    transform: scale(1.03);
     //}
@@ -78,18 +119,76 @@
 
 .judgeLumaImg {
     @include littleImgParent;
-    width: 80%;
-    margin-top: 65%;
-    left: -10%;
+    top: 71%;
+    left: 7.6%;
 }
 
 .gavelImg {
     @include littleImgParent;
-    width: 50%;
-    top: -14%;
-    right: -5%;
+    right: 7.2%;
+    bottom: 58%;
 }
 
-.rulesText {
+.rulesTextStyles {
 
+
+    h1 {
+        color: $primary-color;
+        font-family: 'Paytone One', sans-serif;
+        text-transform: uppercase;
+    }
+
+    h2 {
+        color: $primary-color;
+        font-family: 'Paytone One', sans-serif;
+    }
+
+    strong {
+        color: $secondary-color;
+        font-family: 'Paytone One', sans-serif;
+    }
+
+    p {
+        color: $secondary-color;
+        font-size: 90%;
+        font-family: 'Poppins', sans-serif;
+    }
+
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+    }
+
+    li {
+        color: $secondary-color;
+        font-size: 90%;
+        font-family: 'Poppins', sans-serif;
+    }
 }
+
+.rulesTransition {
+    transition: opacity 300ms ease-in-out;
+    opacity: 0;
+
+    &.active {
+        opacity: 1;
+    }
+}
+
+.rulesTitleText {
+    bottom: 48vh;
+    margin-left: 5vh;
+    opacity: inherit;
+    transition: opacity 300ms ease-in-out;
+}
+
+.rulesBodyText {
+    bottom: 37vh;
+    margin-left: 5vh;
+    width: 80%;
+    opacity: inherit;
+    transition: opacity 800ms ease-in-out;
+}
+
+

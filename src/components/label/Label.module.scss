@@ -1,3 +1,5 @@
+@use "@/App.module.scss" as *;
+
 // Logo section
 .logoImage {
   position: absolute;
@@ -55,7 +57,7 @@
     position: absolute;
     top: 20%;
     font-size: 100%;
-    color: #911AB0;
+    color: $primary-color;
     font-family: "Paytone One", sans-serif;
     text-transform: uppercase;
   }
@@ -65,7 +67,7 @@
     position: absolute;
     top: 45%;
     font-family: 'Poppins', sans-serif;
-    color: rgba(205, 184, 208);
+    color: $secondary-color;
     font-size:85%;
     text-transform: uppercase;
   }
