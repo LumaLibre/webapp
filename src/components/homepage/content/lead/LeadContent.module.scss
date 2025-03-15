@@ -17,6 +17,10 @@
         font-family: "Paytone One", sans-serif;
         color: rgba(205,184,208,90%)
     }
+
+    @media (max-width: 758px) {
+        top: 55%;
+    }
 }
 
 .imageContainer {
@@ -25,6 +29,14 @@
     align-items: center;
     gap: 2%;
     margin-top: -2%;
+
+    @media (max-width: 768px) {
+        gap: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 12vh;
+    }
 }
 
 .smallImage {
@@ -34,38 +46,14 @@
     &:hover {
         transform: scale(1.1); // Slight zoom on hover
     }
-}
-
-// Responsive adjustments
-@media (max-width: 768px) {
-    .leadContentImage {
-        height: 100vh;
-        object-fit: cover;
-    }
-    .leadContentText {
-        top: 55%;
-    }
-    .imageContainer {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 1%;
-        margin-top: 12vh;
-    }
-    .smallImage {
-        width: 18vw;
-        max-width: 90px;
-    }
-}
 
 
-// Responsive adjustments
-@media (max-width: 768px) {
-    .imageContainer {
-        gap: 30%;
-    }
-
-    .smallImage {
+    @media (max-width: 768px) { // Phone
         width: 10%;
+        transform: scale(3.4);
+
+        &:hover {
+            transform: scale(3.5);
+        }
     }
 }

@@ -25,9 +25,9 @@ function NewsPageContent({ page }: { page: number }) {
     useEffect(() => {
         const updatePostsPerPage = () => {
             if (window.innerWidth <= 768) {
-                setPostsPerPage(4); // Phone: 3 posts per page
+                setPostsPerPage(4); // Phone
             } else {
-                setPostsPerPage(8); // Default: 8 posts per page
+                setPostsPerPage(8); // Default
             }
         };
 
@@ -63,11 +63,6 @@ function NewsPageContent({ page }: { page: number }) {
         }
     }
 
-    let carouselNav = styles.carouselNav;
-    if (paginatedPosts.length <= 4) {
-        carouselNav = styles.halfCardsCarouselNav;
-    }
-
     return newsStyleSection(
         <div className={styles.postList}>
             {paginatedPosts.map((post: NewsPostContainer, index: number) => {
@@ -82,7 +77,7 @@ function NewsPageContent({ page }: { page: number }) {
                     />
                 );
             })}
-            <div className={carouselNav}>
+            <div className={styles.carouselNav}>
                 <a className={styles.carouselNavBack} href={`${pageRef}${page - 1}`}>
                     <div className={styles.carouselArrow} />
                 </a>

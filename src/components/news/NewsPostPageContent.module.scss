@@ -9,7 +9,7 @@
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     border-radius: 10px; // Rounded corners
-    background: rgb(22, 22, 22);
+    background: $card-color;
     margin-top: 25vh;
     padding-bottom: 30px;
 
@@ -42,7 +42,7 @@
     h1 {
         text-align: center;
         color: $primary-color;
-        font-family: "Paytone One", sans-serif;
+        font-family: 'Paytone One', sans-serif;
         filter: drop-shadow(0 0 2em rgb(96, 0, 159));
     }
 

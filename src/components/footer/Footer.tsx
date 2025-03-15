@@ -26,8 +26,8 @@ function Footer() {
 
     return (
         <footer className={styles.footerContainer}>
-            <div className={styles.footerTop}>
-                <div className={styles.footerTopItemsLeft}>
+            <div className={styles.footerTopContainer}>
+                <div className={styles.footerTopItems}>
                     <img src={lumaLogo} alt="Luma Logo" className={styles.logoSmall}/>
                     <div className={styles.serverCount}
                          onMouseEnter={() => setHoverText("Click to copy!")}

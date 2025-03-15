@@ -12,6 +12,7 @@ function LeadContent() {
             <div className={styles.leadContentText}>
                 <h1>Welcome to Luma</h1>
                 <p>
+                    {/* This description kind of sucks - TODO: Change this */}
                     We're a TownySMP server focused on high-quality gameplay and a vibrant,
                     welcoming community. Join us to enjoy unique features like custom items,
                     a seasonal world, item wraps, mcMMO, and Towny!

@@ -8,7 +8,7 @@
     margin: auto 0 0;
 }
 
-.footerTop {
+.footerTopContainer {
     box-sizing: border-box;
     border: 0;
     font: inherit;
@@ -36,7 +36,7 @@
 //    width: 1280px;
 //}
 
-.footerTopItemsLeft {
+.footerTopItems {
     box-sizing: border-box;
     border: 0;
     font: inherit;
@@ -103,6 +103,10 @@
     margin: 0 1rem 0 3rem;
     position: relative;
     top: -0.125rem;
+
+    @media (max-width: 768px) {
+        margin-left: 0.8rem;
+    }
 }
 
 .serverCount {
@@ -116,12 +120,12 @@
     position: relative;
     top: -0.125rem;
 
-     h4 {
-         font-size: 100%;
-         color: #911AB0;
-         font-family: "Paytone One", sans-serif;
-         text-transform: uppercase;
-     }
+    h4 {
+        font-size: 100%;
+        color: #911AB0;
+        font-family: 'Paytone One', sans-serif;
+        text-transform: uppercase;
+    }
 
     h5 {
         margin-top: -20px;
@@ -129,7 +133,20 @@
         color: rgba(205, 184, 208);
         font-size: 85%;
         text-transform: uppercase;
-        white-space: nowrap;
+        //white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+        //margin-right: 2rem;
+        margin-left: -1rem;
+
+        h4 {
+            font-size: 90%;
+        }
+
+        h5 {
+            font-size: 75%;
+        }
     }
 
 }
@@ -137,21 +154,32 @@
 .footerBottomContainer {
     box-sizing: border-box;
     margin: 0;
-    padding: 2rem 2rem 1rem 2rem;
+    padding: 1.5rem 2rem 2rem 3rem;
     background-color: rgb(22, 22, 22);
     display: flex;
-    justify-content: space-between; /* Spreads content */
-    align-items: flex-end; /* Aligns items at the bottom */
-    flex-wrap: wrap; /* Ensures responsiveness */
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
 }
 
 
 .footerBottomItems {
     display: flex;
-    justify-content: flex-end; /* Aligns items to the right */
-    align-items: center; /* Centers items vertically */
-    gap: 1rem; /* Adds spacing between items */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
     flex-grow: 1;
+
+    @media (max-width: 768px) {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
 
     img {
         width: 90px;
@@ -185,7 +213,12 @@
     padding: 0;
     display: flex;
     flex-direction: column;
-    margin-top: -10rem;
+    margin-top: -2vh;
+    white-space: normal;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    max-width: 100%;
+    text-align: center; // Centers text for a better mobile experience
 
     p {
         box-sizing: border-box;
