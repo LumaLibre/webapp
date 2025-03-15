@@ -40,14 +40,14 @@
 
 }
 
-/* Carousel Navigation - Fixed at Bottom */
+
 .carouselNav {
-    @include carouselNavStyles(-53px);
+    @include carouselNavStyles(5vh);
 }
 
-/* Ensuring it doesn't move when cards shift */
+
 .halfCardsCarouselNav {
-    @include carouselNavStyles(-400px);
+    @include carouselNavStyles(5vh);
 }
 
 

@@ -12,6 +12,11 @@
     background: rgb(22, 22, 22);
     margin-top: 25vh;
     padding-bottom: 30px;
+
+    @media (max-width: 768px) {
+        width: 97%;
+        //margin-top: 20vh;
+    }
 }
 
 .articleAuthorContainer {
@@ -28,6 +33,11 @@
     padding-left: 12.5%;
     width: 60vw;
     color: $secondary-color;
+
+    @media (max-width: 768px) {
+        padding-left: 5%;
+        width: 90vw;
+    }
 
     h1 {
         text-align: center;
@@ -53,6 +63,11 @@
     object-fit: cover; // image fills the height while maintaining aspect ratio
     object-position: center; // center the image
     border-radius: 10px 10px 0 0; // Rounded corners on top
+
+    @media (max-width: 768px) {
+        // zoom out of the image more on smaller screens
+        height: 200px;
+    }
 }
 .articleAuthorImageContainer {
     border-radius: 10%;

@@ -27,7 +27,7 @@
   transition: transform 0.3s ease;
 
   @media (max-width: 768px) {
-    width: 50vw;
+    width: 40vh;
     max-width: 100%;
   }
 
@@ -41,7 +41,7 @@
 
 }
 
-// Button container
+/// Button container
 .btnContainer {
   justify-content: center;
   align-items: center;
@@ -51,18 +51,35 @@
   display: inline-block;
   text-align: center;
   transition: transform 0.3s ease;
+
+  @media (max-width: 768px) { // On mobile
+    top: -10vh;
+    width: 17%;
+    margin: 0;
+  }
 }
 
+// Play Button
 .playBtnContainer {
   @extend .btnContainer;
   right: calc(82% + 80px);
+
+
+  @media (max-width: 768px) { // On mobile
+    right: unset;
+    left: 75%;
+  }
 }
 
+// Discord Button
 .discordBtnContainer {
   @extend .btnContainer;
   left: calc(78% + 80px);
-}
 
+  @media (max-width: 768px) { // On mobile
+    left: 95%;
+  }
+}
 
 
 .btnParent {
