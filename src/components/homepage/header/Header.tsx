@@ -1,6 +1,6 @@
 import styles from "./Header.module.scss";
-import logo from "@/assets/LumaLogo.png";
-import ipButton from "@/assets/IPButton.png";
+import logo from "@/assets/LumaText.webp";
+import ipButton from "@/assets/Button.webp";
 
 function Header() {
     return (

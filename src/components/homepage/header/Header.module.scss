@@ -1,7 +1,7 @@
 @use "@/App.module.scss" as *;
 
 .headerBackground {
-    @include artBackground("@/assets/LumaBackground.png");
+    @include artBackground("@/assets/HouseBackground.webp");
     // Overriding properties
     background-repeat: no-repeat;
     flex-direction: column;

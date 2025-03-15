@@ -1,6 +1,6 @@
 import styles from "./SecondaryContent.module.scss";
 import generalStyles from "../HeaderSector.module.scss";
-import spaceImg from "@/assets/SpaceBg.png";
+import spaceImg from "@/assets/SpaceBackground.webp";
 
 
 function SecondSection() {

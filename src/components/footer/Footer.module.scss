@@ -13,52 +13,84 @@
     border: 0;
     font: inherit;
     margin: 0;
-    padding: 0;
     vertical-align: baseline;
     background-color: rgb(30, 29, 29);
     padding-top: 1rem;
     padding-bottom: 1rem;
+    display: flex;
+    align-items: center; /* Centers items vertically */
+    gap: 1rem; /* Adds spacing between items */
+    flex-grow: 1;
+    justify-content: space-between;
 }
 
-.footerTopItems {
-    box-sizing: border-box;
-    border: 0;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
-    display: flex;
-    align-items: center;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: calc(100% - 40px);
-    width: 1280px;
-}
+//.footerTopItems {
+//    box-sizing: border-box;
+//    border: 0;
+//    font: inherit;
+//    padding: 0;
+//    vertical-align: baseline;
+//    display: flex;
+//    align-items: center;
+//    //max-width: calc(100% - 40px);
+//    width: 1280px;
+//}
 
 .footerTopItemsLeft {
     box-sizing: border-box;
     border: 0;
     font: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
     display: flex;
     align-items: center;
-    margin-right: auto;
+    align-self: flex-start;
+    justify-content: flex-start;
+    flex-direction: row; /* Changed from column to row */
+    margin-right: auto; /* Keeps it aligned to the left */
+    gap: 1rem; /* Adds spacing between image and text */
 }
 
-.footerTopSocialLinks {
-    box-sizing: border-box;
-    border: 0;
-    font: inherit;
-    margin: 0;
-    padding: 0;
-    vertical-align: baseline;
+
+.footerTopSocialLinksContainer {
     display: flex;
-    align-items: center;
-    margin-left: 60%;
-    gap: 1.75rem;
+    align-items: flex-end;
+    margin-bottom: 1rem;
 }
+@keyframes bounce-in-right {
+    0% {
+        opacity: 0;
+        transform: translateX(2000px);
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(-30px);
+    }
+    80% { transform: translateX(10px); }
+    100% { transform: translateX(0); }
+}
+@keyframes hithere {
+    30% { transform: scale(1.2); }
+    40%, 60% { transform: rotate(-20deg) scale(1.2); }
+    50% { transform: rotate(20deg) scale(1.2); }
+    70% { transform: rotate(0deg) scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+
+.footerTopSocialLink {
+    font-size: 50px;
+    position: relative;
+    margin-right: 5rem;
+    transition: transform 0.3s ease-in-out;
+    //animation: bounce-in-right 1s ease-in-out;
+    //animation-iteration-count: 1;
+    //animation-fill-mode: forwards;
+    &:hover {
+        animation: hithere 1s ease;
+    }
+
+    //top: 10rem; /* Adjust this value to move the icon up */
+}
+
 
 .logoSmall {
     box-sizing: border-box;
@@ -66,7 +98,6 @@
     font: inherit;
     padding: 0;
     vertical-align: baseline;
-    cursor: pointer;
     width: 50px;
     height: 50px;
     margin: 0 1rem 0 3rem;
@@ -106,45 +137,67 @@
 .footerBottomContainer {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+    padding: 2rem 2rem 1rem 2rem;
     background-color: rgb(22, 22, 22);
-    padding-bottom: 2rem;
-    padding-top: 2.75rem;
-}
-
-.footerBottom {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    margin-left: auto;
-    margin-right: auto;
-    max-width: calc(100% - 40px);
-    width: 1280px;
-}
-
-.footerBottomTextContainer {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
     display: flex;
-    flex-direction: column;
+    justify-content: space-between; /* Spreads content */
+    align-items: flex-end; /* Aligns items at the bottom */
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
 
-    p {
-        box-sizing: border-box;
-        font: inherit;
-        margin: 0;
-        padding: 0;
-        vertical-align: baseline;
-        color: rgb(156 149 139);
-        font-size: 0.83rem;
-        font-weight: 700;
-        margin-top: 0.25rem;
+
+.footerBottomItems {
+    display: flex;
+    justify-content: flex-end; /* Aligns items to the right */
+    align-items: center; /* Centers items vertically */
+    gap: 1rem; /* Adds spacing between items */
+    flex-grow: 1;
+
+    img {
+        width: 90px;
+        max-width: 90%;
+    }
+}
+
+.sourceCodeLuma {
+    box-sizing: border-box;
+    border: 0;
+    font: inherit;
+    padding: 0;
+    vertical-align: baseline;
+    cursor: pointer;
+    margin: 0 3.8rem 0.2rem 3rem;
+    position: relative;
+    transition: transform 0.3s ease-in-out;
+
+    &:hover {
+        transform: scale(1.1);
+        filter: drop-shadow(0 0 1em #312a2a);
+
+        //filter: drop-shadow(0 0 2em rgb(96, 0, 159));
     }
 }
 
 
 
+.footerBottomTextContainer {
+    box-sizing: border-box;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin-top: -10rem;
 
+    p {
+        box-sizing: border-box;
+        font: inherit;
+        padding: 0;
+        vertical-align: baseline;
+        color: rgb(156 149 139);
+        font-size: 0.83rem;
+        font-weight: 700;
+        margin-top: -0.6rem;
+    }
+}
 
 
 .footerButton {

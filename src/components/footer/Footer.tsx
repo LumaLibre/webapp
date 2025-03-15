@@ -1,41 +1,59 @@
 import styles from "./Footer.module.scss"
-import lumaLogo from "@/assets/favicon.png"
+import lumaLogo from "@/assets/LogoSmall.webp"
 import {useQuery} from "@tanstack/react-query";
 import {fetchServerStatus} from "@/scripts/serverStatuses.ts";
+import {LUMA_IP_ADDRESS} from "@/constants.ts";
+import sourceCodeLuma from "@/assets/BlackLumaAlert.webp";
+import {useEffect, useState} from "react";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
     const currentYear = new Date().getFullYear();
-    let {data: mcStatus, isLoading: mcStatusIsLoading, isError: mcStatusError} = useQuery<string>({
+    let { data: rawStatus, isLoading, isError } = useQuery<string>({
         queryKey: ["mcServerStatus"],
         queryFn: fetchServerStatus,
     });
-    if (mcStatusIsLoading || mcStatusError || !mcStatus) {
-        mcStatus = 'Loading...';
-    }
+    const snapshotLoading = isLoading || isError || !rawStatus;
+    rawStatus = snapshotLoading ? "Loading..." : rawStatus;
+
+    const statusText = snapshotLoading ? rawStatus : `Join ${rawStatus}!`;
+
+    const [hoverText, setHoverText] = useState(statusText);
+    useEffect(() => {
+        setHoverText(statusText);
+    }, [statusText]);
 
     return (
         <footer className={styles.footerContainer}>
             <div className={styles.footerTop}>
                 <div className={styles.footerTopItemsLeft}>
                     <img src={lumaLogo} alt="Luma Logo" className={styles.logoSmall}/>
-                    <div className={styles.serverCount}>
-                        <h4>play.lumamc.net</h4>
-                        <h5>Join {mcStatus}!</h5>
-                    </div>
-                    <div className={styles.footerTopSocialLinks}>
-                        <i className="fa-brands fa-discord"></i>
+                    <div className={styles.serverCount}
+                         onMouseEnter={() => setHoverText("Click to copy!")}
+                         onMouseLeave={() => setHoverText(statusText)}
+                         onClick={() => {
+                             navigator.clipboard.writeText(LUMA_IP_ADDRESS);
+                             setHoverText("Copied, see you there!");
+                         }}
+                    >
+                        <h4>{LUMA_IP_ADDRESS}</h4>
+                        <h5>{hoverText}</h5>
                     </div>
                 </div>
-                <div className={styles.footerTopSocialLinks}>
-
+                <div className={styles.footerTopSocialLinksContainer}>
+                    <FontAwesomeIcon icon={faDiscord} className={styles.footerTopSocialLink} />
                 </div>
             </div>
             <div className={styles.footerBottomContainer}>
-                <div className={styles.footerBottom}>
-                    <div className={styles.footerBottomTextContainer}>
-                        <h3>© {currentYear} LumaMC. All rights reserved.</h3>
-                        <p>We are not affiliated with Mojang AB.</p>
-                    </div>
+                <div className={styles.footerBottomTextContainer}>
+                <h3>© {currentYear} LumaMC. All rights reserved.</h3>
+                    <p>We are not affiliated with Mojang AB.</p>
+                </div>
+                <div className={styles.footerBottomItems}>
+                    <a href="https://github.com/LumaLibre/web" target="_blank" rel="noopener noreferrer">
+                        <img src={sourceCodeLuma} alt="Luma Logo" className={styles.sourceCodeLuma}/>
+                    </a>
                 </div>
             </div>
         </footer>

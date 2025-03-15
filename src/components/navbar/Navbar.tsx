@@ -25,9 +25,9 @@ function Navbar() {
                 className={`${styles.hamburger} ${isMenuOpen ? styles.open : ""}`}
                 onClick={toggleMenu}
             >
-                <div></div>
-                <div></div>
-                <div></div>
+                <div/>
+                <div/>
+                <div/>
             </div>
 
             <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>

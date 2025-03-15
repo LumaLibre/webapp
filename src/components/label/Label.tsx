@@ -1,7 +1,7 @@
 import {fetchDiscordStatus, fetchServerStatus} from "@/scripts/serverStatuses.ts";
 import {DISCORD_INV, DISCORD_INV_SHORT, LUMA_IP_ADDRESS} from "@/constants.ts";
 import {useState} from "react";
-import logo from "@/assets/LumaLogo.png";
+import logo from "@/assets/LumaText.webp";
 import styles from "./Label.module.scss";
 import playBtn from "@/assets/PlayBtn.webp";
 import discordBtn from "@/assets/DiscordBtn.webp";
@@ -29,14 +29,10 @@ const Label = () => {
     const [discordHoverText, discordSetHoverText] = useState(DISCORD_INV_SHORT);
 
     return (
-        <>
-            <Link to="/">
-                <img src={logo} alt="Luma Logo" className={styles.logoImage}/>
-            </Link>
-
+        <div className={styles.labelContainer}>
             <div className={styles.playBtnContainer}>
                 <div className={styles.playBtnImg}
-                     onMouseEnter={() => mcSetHoverText("Click to copy IP!")}
+                     onMouseEnter={() => mcSetHoverText("Click to copy!")}
                      onMouseLeave={() => mcSetHoverText(LUMA_IP_ADDRESS)}
                      onClick={() => {
                          navigator.clipboard.writeText(LUMA_IP_ADDRESS);
@@ -48,6 +44,9 @@ const Label = () => {
                     <h3>{mcHoverText}</h3>
                 </div>
             </div>
+            <Link to="/">
+                <img src={logo} alt="Luma Logo" className={styles.logoImage}/>
+            </Link>
             <div className={styles.discordBtnContainer}>
                 <div className={styles.discordBtnImg}
                      onMouseEnter={() => discordSetHoverText("Click to join!")}
@@ -62,7 +61,7 @@ const Label = () => {
                     <h3>{discordHoverText}</h3>
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

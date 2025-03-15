@@ -1,7 +1,7 @@
 @use "@/App.module.scss" as *;
 
 .newsPageBackground {
-    @include artBackground("@/assets/StarsBg.png");
+    @include artBackground("@/assets/StarsBackground.webp");
 }
 
 
@@ -13,7 +13,7 @@
     width: 100%;
     justify-content: center;
     gap: 1.5rem;
-    padding: 1rem;
+    padding: 15rem;
 
     @media (max-width: 1024px) { // Tablet
         grid-template-columns: repeat(2, minmax(300px, 1fr));
@@ -81,7 +81,7 @@
     background-color: rgb(254, 238, 208);
     bottom: 0.25rem;
     left: 0;
-    mask: url("@/assets/carouselArrow.svg") no-repeat center / cover;
+    mask: url("@/assets/CarouselArrow.svg") no-repeat center / cover;
     position: absolute;
     width: 1.75rem;
 

@@ -15,8 +15,8 @@ import {faFlag, faComments, faStore, faGamepad, faClipboardList} from "@fortawes
 export const quickLink = (text: string, link: string) => {
     return (
         <a href={link} target="_blank">{text}</a>
-    )
-}
+    );
+};
 
 
 const tabs = [
@@ -24,7 +24,7 @@ const tabs = [
     {name: "Conduct", component: <ConductRules/>, icon: faComments},
     {name: "Store", component: <StoreRules/>, icon: faStore},
     {name: "Gameplay", component: <GameplayRules/>, icon: faGamepad},
-    {name: "Policies", component: <PoliciesRules/>, icon: faClipboardList},
+    {name: "Policies", component: <PoliciesRules/>, icon: faClipboardList}
 ];
 
 function Rules() {
@@ -44,8 +44,8 @@ function Rules() {
                     </h1>
                     {tabs.map((tab) => (
                         <a
-                            key={tab.name}
                             className={styles.rulesCardSelectorNavItem}
+                            key={tab.name}
                             onClick={() => setActiveTab(tab.name)}
                         >
                             <FontAwesomeIcon icon={tab.icon} className={styles.iconSmall} />
