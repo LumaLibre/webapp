@@ -3,6 +3,10 @@ import {API_ENDPOINT} from "@/constants.ts";
 
 const endpoint: string = `${API_ENDPOINT}/news/`;
 
+/**
+ * Fetches all news posts from the webserver API.
+ * @returns An array of NewsPostContainer objects.
+ */
 export async function fetchAllNewsPosts(): Promise<NewsPostContainer[]> {
     const response = await fetch(endpoint);
 
@@ -35,7 +39,10 @@ export async function fetchAllNewsPosts(): Promise<NewsPostContainer[]> {
 }
 
 
-
+/**
+ * Fetches a specific news post by its ID from the webserver API.
+ * @param id The ID of the news post to fetch.
+ */
 export async function fetchNewsPost(id: string): Promise<NewsPostContainer> {
     return fetch(endpoint + id)
         .then(response => response.json())

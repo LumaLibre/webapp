@@ -1,0 +1,28 @@
+@use "@/App.module" as *;
+
+.topVoterContainer {
+
+}
+
+.bodyRenderImage {
+
+}
+
+.topVoterText {
+  h2 {
+    font-size: 100%;
+    color: $primary-color;
+    font-family: 'Paytone One', sans-serif;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    white-space: nowrap;
+    position: absolute;
+    top: 25%;
+    font-family: 'Poppins', sans-serif;
+    color: $secondary-color;
+    font-size:85%;
+    text-transform: uppercase;
+  }
+}

@@ -2,6 +2,10 @@ import {LUMA_DISCORD_ENDPOINT, LUMA_SERVERSTATS_ENDPOINT} from "@/constants.ts";
 
 const failed = '?';
 
+/**
+ * Fetches the server status from the mcserverstatus API.
+ * @returns A string indicating the number of players online or a failure message.
+ */
 export async function fetchServerStatus(): Promise<string> {
     const playersOnline = 'Players Online';
 
@@ -26,6 +30,10 @@ export async function fetchServerStatus(): Promise<string> {
     }
 }
 
+/**
+ * Fetches the Discord status from the Discord API.
+ * @returns A string indicating the number of users online or a failure message.
+ */
 export async function fetchDiscordStatus(): Promise<string> {
     const usersOnline = 'Users Online';
 

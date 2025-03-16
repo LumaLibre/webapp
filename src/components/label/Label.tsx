@@ -12,11 +12,11 @@ const Label = () => {
     // querying
     let {data: mcStatus, isLoading: mcStatusIsLoading, isError: mcStatusError} = useQuery<string>({
         queryKey: ["mcServerStatus"],
-        queryFn: fetchServerStatus,
+        queryFn: fetchServerStatus
     });
     let {data: discordStatus, isLoading: discordStatusIsLoading, isError: discordStatusError} = useQuery<string>({
         queryKey: ["discordServerStatus"],
-        queryFn: fetchDiscordStatus,
+        queryFn: fetchDiscordStatus
     });
     if (mcStatusIsLoading || mcStatusError || !mcStatus) {
         mcStatus = 'Loading...';

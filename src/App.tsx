@@ -4,6 +4,7 @@ import MainPage from "./pages/MainPage.tsx";
 import RulesPage from "./pages/RulesPage.tsx";
 import NewsPostPage from "./pages/NewsPostPage.tsx";
 import NewsPage from "./pages/NewsPage.tsx";
+import VotePage from "@/pages/VotePage.tsx";
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<MainPage />}/>
                 <Route path="/rules" element={<RulesPage />} />
+                <Route path="/vote" element={<VotePage />} />
                 <Route path="/news" element={<NewsPage />} />
                 <Route path="/news/:id" element={<NewsPostPage />} />
             </Routes>

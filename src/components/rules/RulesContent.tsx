@@ -3,11 +3,11 @@ import styles from "./RulesContent.module.scss";
 import judgeLuma from "@/assets/JudgeLuma.webp";
 import gavel from "@/assets/Gavel.webp"
 import Label from "@/components/label/Label.tsx";
-import OverviewRules from "@/components/rules/content/OverviewRules.tsx";
-import ConductRules from "@/components/rules/content/ConductRules.tsx";
-import StoreRules from "@/components/rules/content/StoreRules.tsx";
-import GameplayRules from "@/components/rules/content/GameplayRules.tsx";
-import PoliciesRules from "@/components/rules/content/PoliciesRules.tsx";
+import OverviewRules from "@/components/rules/components/OverviewRules.tsx";
+import ConductRules from "@/components/rules/components/ConductRules.tsx";
+import StoreRules from "@/components/rules/components/StoreRules.tsx";
+import GameplayRules from "@/components/rules/components/GameplayRules.tsx";
+import PoliciesRules from "@/components/rules/components/PoliciesRules.tsx";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faFlag, faComments, faStore, faGamepad, faClipboardList} from "@fortawesome/free-solid-svg-icons";
 

@@ -1,5 +1,4 @@
 export const HOST: string = 'https://dev.lumamc.net'; // Change to lumamc.net when deploying!
-export const API_ENDPOINT: string = `${HOST}/api`;
 
 export const LUMA_DISCORD_GUILD_ID: string = '1188316962258948149';
 export const DISCORD_INV_SHORT: string = 'lumamc.net/chat';
@@ -18,5 +17,10 @@ export const WIKI_LINK = (endpoint: string) => {
 
 export const STORE = 'https://store.lumamc.net';
 
-export const MINOTAR_HELM_API: string = 'https://minotar.net/helm/';
-
+// Apis
+export const API_ENDPOINT: string = `${HOST}/api`;
+// TODO: Nest Topvoter's endpoint inside normal API endpoint
+export const LUMA_TOPVOTER_ENDPOINT: string = `http://170.205.24.90:19179/`; // https://topvoter.lumamc.net/
+export const MOJANG_API: string = 'https://api.minecraftservices.com/';
+export const HELM_API: string = 'https://minotar.net/helm/';
+export const BODY_RENDER_API: string = 'https://crafatar.com/renders/body/';

@@ -12,6 +12,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom"; // Import Link for navigation
 
+// FIXME: Redo this whole component
+
 function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -44,8 +46,10 @@ function Navbar() {
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <FontAwesomeIcon icon={faCheckCircle} className={styles.navIcon}/>
-                    Vote
+                    <Link to="/vote" className={styles.navLink}>
+                        <FontAwesomeIcon icon={faCheckCircle} className={styles.navIcon}/>
+                        Vote
+                    </Link>
                 </li>
                 <li className={styles.navItem}>
                     <Link to="/news" className={styles.navLink}>
