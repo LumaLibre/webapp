@@ -13,6 +13,14 @@
     @include cardParent;
     margin-top: unset;
     top: 40vh;
+    overflow: auto;
+    &::-webkit-scrollbar { display: none; }
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    @media (max-width: 1024px) { // Tablet
+        margin-top: unset;
+    }
 }
 
 .voteLinksCard {
@@ -22,11 +30,18 @@
     height: 40%;
     margin-left: -35%;
 
+    @media (max-width: 1024px) { // Tablet
+        margin-left: -45%;
+        height: 55%;
+    }
+
     @media (max-width: 768px) { // Phone
-        margin-top: 90%;
+        margin-top: 80%;
         margin-left: unset;
         width: 95%;
-        height: 50vh;
+        min-height: 28%;
+        height: auto;
+        max-height: 38%;
     }
 
 }
@@ -46,6 +61,7 @@
         margin-top: 5%;
         min-width: 95%;
         min-height: 10%;
+        max-height: 15% !important;
         margin-left: unset;
     }
 }
@@ -57,7 +73,12 @@
     margin-top: 4%;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
+    flex-wrap: nowrap;
+
+    @media (max-width: 768px) {
+        gap: 10px;
+        margin-left: -4%;
+    }
 }
 
 @mixin headerText {
@@ -114,4 +135,9 @@
     margin-top: 10%;
     row-gap: 20px;
     flex-wrap: wrap;
+
+    @media (max-width: 468px) {
+        gap: 10px;
+        row-gap: 10px;
+    }
 }

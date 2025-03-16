@@ -20,6 +20,11 @@
     width: 50%;
     display: block;
     margin: auto;
+
+    @media (max-width: 468px) { // Small display
+        left: -3%;
+        width: 40%;
+    }
 }
 
 .textContainer {
@@ -39,6 +44,8 @@
     //display: block;
 
 
+
+
     h5 {
         position: relative;
         top: 0;
@@ -46,12 +53,30 @@
         font-family: 'Paytone One', sans-serif;
         word-wrap: break-word;
         word-break: break-word;
-        //min-height: 2em;
         font-size: 90%;
+
+        @media (max-width: 768px) {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        @media (max-width: 468px) { // Small display
+            font-size: 80%;
+        }
     }
 
     h4 {
+        position: relative;
         font-family: 'Poppins', sans-serif;
         color: $secondary-color;
+
+        @media (max-width: 468px) { // Small display
+            font-size: 80%;
+        }
+
+        @media (max-width: 768px) {
+            margin-top: -2vh;
+        }
     }
 }
