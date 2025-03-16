@@ -1,4 +1,4 @@
-import {LUMA_TOPVOTER_ENDPOINT, MOJANG_API} from "@/constants.ts";
+import {LUMA_TOPVOTER_ENDPOINT} from "@/constants.ts";
 import {RecordedVoter} from "@/scripts/model/RecordedVoter.ts";
 
 

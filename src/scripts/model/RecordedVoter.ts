@@ -1,4 +1,4 @@
-import {BODY_RENDER_API, MOJANG_API} from "@/constants.ts";
+import {BODY_RENDER_API} from "@/constants.ts";
 
 export class RecordedVoter {
 
@@ -15,6 +15,4 @@ export class RecordedVoter {
     public getBodyRenderURL(): string {
         return `${BODY_RENDER_API}${this.uuid}?overlay=true`;
     }
-
-
 }

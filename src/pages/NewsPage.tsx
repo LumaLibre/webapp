@@ -1,14 +1,12 @@
 import {useSearchParams} from "react-router-dom";
 import NewsPageContent from "@/components/news/NewsPageContent.tsx";
-import {useEffect} from "react";
 import Navbar from "@/components/navbar/Navbar.tsx";
 import Footer from "@/components/footer/Footer.tsx";
+import {setTitle} from "@/App.tsx";
 
 
 function NewsPage() {
-    useEffect(() => {
-        document.title = "LumaMC • News";
-    }, []);
+    setTitle('News');
 
     const [searchParams] = useSearchParams();
     // Default to page 1 if not provided

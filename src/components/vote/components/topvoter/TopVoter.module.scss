@@ -1,28 +1,46 @@
 @use "@/App.module" as *;
 
 .topVoterContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers all content horizontally */
+    justify-content: center; /* Centers all content vertically */
+    text-align: center;
+}
 
+.bodyRenderContainer {
+    display: flex;
+    justify-content: center; /* Center image horizontally */
+    align-items: center; /* Center image vertically */
+    width: 100%;
 }
 
 .bodyRenderImage {
-
+    width: 50%; /* Adjust as needed */
+    display: block;
+    margin: auto; /* Ensures centering */
 }
 
-.topVoterText {
-  h2 {
+
+.textContainer {
+    text-align: center;
+    margin-top: 10px;
+}
+
+%textStyle {
     font-size: 100%;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.textStyle1 {
+    @extend %textStyle;
     color: $primary-color;
     font-family: 'Paytone One', sans-serif;
-    text-transform: uppercase;
-  }
+}
 
-  h3 {
-    white-space: nowrap;
-    position: absolute;
-    top: 25%;
+.textStyle2 {
+    @extend %textStyle;
     font-family: 'Poppins', sans-serif;
     color: $secondary-color;
-    font-size:85%;
-    text-transform: uppercase;
-  }
 }

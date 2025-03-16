@@ -20,7 +20,31 @@
 
 }
 
-.voteLinksCardText {
+.topVotersCard {
+    @include cardParent;
+    justify-content: center;
+
+    width: 40%;
+    height: 40%;
+    margin-left: 50%;
+
+    @media (max-width: 768px) { // Phone
+        margin-top: 37%;
+        margin-left: unset;
+    }
+}
+
+.topVotersContainer {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    margin-top: 4%;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+.cardText {
     color: $primary-color;
     font-family: 'Paytone One', sans-serif;
     text-transform: uppercase;

@@ -5,7 +5,14 @@ import RulesPage from "./pages/RulesPage.tsx";
 import NewsPostPage from "./pages/NewsPostPage.tsx";
 import NewsPage from "./pages/NewsPage.tsx";
 import VotePage from "@/pages/VotePage.tsx";
+import {useEffect} from "react";
 
+
+export const setTitle = (title: string) => {
+    useEffect(() => {
+        document.title = `${title} • LumaMC`;
+    }, [title]);
+};
 
 function App() {
     return (

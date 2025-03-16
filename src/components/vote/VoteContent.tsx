@@ -1,11 +1,7 @@
 import styles from "./VoteContent.module.scss";
 import VoteLinkButton from "@/components/vote/components/votelink/VoteLinkButton.tsx";
 import Label from "@/components/label/Label.tsx";
-import {useQuery} from "@tanstack/react-query";
-import {fetchTopVotersList} from "@/scripts/topVoters.ts";
-import {RecordedVoter} from "@/scripts/model/RecordedVoter.ts";
-import TopVoter from "@/components/vote/components/topvoter/TopVoter.tsx";
-
+import TopVoters from "@/components/vote/components/topvoter/TopVoters.tsx";
 
 const voteSites: string[] = [
     'https://minecraftservers.org/vote/658337',
@@ -20,31 +16,14 @@ const voteSites: string[] = [
     'https://www.curseforge.com/servers/minecraft/game/lumamc/vote'
 ];
 
-const TopVoters = () => {
-    const { data: topVoterList, isLoading, isError } = useQuery<RecordedVoter[]>({
-        queryKey: ["topVoters"],
-        queryFn: () => fetchTopVotersList(1, 3)
-    });
-
-    if (isLoading) return <h1>Loading...</h1>;
-    if (isError) return <h1>Error fetching top voters</h1>;
-
-    return (
-        <div className={styles.topVotersContainer}>
-            {topVoterList?.map((topVoter) => (
-                <TopVoter key={topVoter.uuid} recordedVoter={topVoter} />
-            ))}
-        </div>
-    );
-};
-
 function VoteContent() {
+    const month = new Date().toLocaleString('en-US', { month: 'long' });
 
     return (
         <div className={styles.background}>
             <Label />
             <div className={styles.voteLinksCard}>
-                <div className={styles.voteLinksCardText}>
+                <div className={styles.cardText}>
                     <h1>Vote for Luma!</h1>
                 </div>
 
@@ -52,6 +31,14 @@ function VoteContent() {
                     {voteSites.map((site, index) => (
                         <VoteLinkButton key={index} href={site} label={`Vote Link #${index + 1}`} />
                     ))}
+                </div>
+            </div>
+            <div className={styles.topVotersCard}>
+                <div className={styles.cardText}>
+                    <h2>Top voters for {month}</h2>
+                </div>
+                <div className={styles.topVotersContainer}>
+                    <TopVoters from={1} to={3}  />
                 </div>
             </div>
         </div>

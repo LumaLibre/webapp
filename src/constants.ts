@@ -20,7 +20,6 @@ export const STORE = 'https://store.lumamc.net';
 // Apis
 export const API_ENDPOINT: string = `${HOST}/api`;
 // TODO: Nest Topvoter's endpoint inside normal API endpoint
-export const LUMA_TOPVOTER_ENDPOINT: string = `http://170.205.24.90:19179/`; // https://topvoter.lumamc.net/
-export const MOJANG_API: string = 'https://api.minecraftservices.com/';
+export const LUMA_TOPVOTER_ENDPOINT: string = `http://170.205.24.90:7070/`; // https://topvoter.lumamc.net/
 export const HELM_API: string = 'https://minotar.net/helm/';
 export const BODY_RENDER_API: string = 'https://crafatar.com/renders/body/';
