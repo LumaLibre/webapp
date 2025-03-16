@@ -1,4 +1,4 @@
-import {HELM_API} from "@/constants.ts";
+import {MINOTAR_API} from "@/constants.ts";
 import {JSX} from "react";
 import ReactMarkdown from 'react-markdown';
 // @ts-ignore
@@ -26,7 +26,7 @@ export class NewsPostContainer {
     }
 
     public getAuthorAvatarURL(): string {
-        return `${HELM_API}${this.author}`;
+        return `${MINOTAR_API}helm/${this.author}`;
     }
 
     public getAuthorAvatar(): JSX.Element {
@@ -34,7 +34,7 @@ export class NewsPostContainer {
     }
 
     public getAuthorAvatarURLWithSize(size: number): string {
-        return `${HELM_API}${this.author}/${size}.png`;
+        return `${MINOTAR_API}helm/${this.author}/${size}.png`;
     }
 
     public getAuthorAvatarWithSize(size: number): JSX.Element {

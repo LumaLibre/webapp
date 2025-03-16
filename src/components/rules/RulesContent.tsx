@@ -14,7 +14,7 @@ import {faFlag, faComments, faStore, faGamepad, faClipboardList} from "@fortawes
 
 export const quickLink = (text: string, link: string) => {
     return (
-        <a href={link} target="_blank">{text}</a>
+        <a href={link} target="_blank" rel="noopener noreferrer">{text}</a>
     );
 };
 

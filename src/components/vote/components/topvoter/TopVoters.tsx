@@ -14,8 +14,8 @@ const TopVoters = ({ from, to }: { from: number, to: number }) => {
 
     return (
         <>
-            {topVoterList?.map((topVoter) => (
-                <TopVoter key={topVoter.uuid} recordedVoter={topVoter} />
+            {topVoterList?.map((topVoter, i) => (
+                <TopVoter key={topVoter.uuid} recordedVoter={topVoter} index={i + 1} />
             ))}
         </>
     );

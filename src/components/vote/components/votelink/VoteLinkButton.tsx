@@ -4,7 +4,7 @@ import styles from "./VoteLinkButton.module.scss";
 interface VoteLinkButtonProps {
     href: string;
     label: string;
-    color?: string; // Optional color prop
+    color?: string; // Optional color
 }
 
 const VoteLinkButton: React.FC<VoteLinkButtonProps> = ({ href, label, color }) => {

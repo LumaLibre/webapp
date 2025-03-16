@@ -1,4 +1,4 @@
-import {BODY_RENDER_API} from "@/constants.ts";
+import {CRAFATAR_API} from "@/constants.ts";
 
 export class RecordedVoter {
 
@@ -12,7 +12,11 @@ export class RecordedVoter {
         this.name = name;
     }
 
+    public getHeadRenderURL(): string {
+        return `${CRAFATAR_API}renders/head/${this.uuid}?overlay=true`;
+    }
+
     public getBodyRenderURL(): string {
-        return `${BODY_RENDER_API}${this.uuid}?overlay=true`;
+        return `${CRAFATAR_API}renders/body/${this.uuid}?overlay=true`;
     }
 }

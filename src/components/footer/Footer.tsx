@@ -2,14 +2,14 @@ import styles from "./Footer.module.scss"
 import lumaLogo from "@/assets/LogoSmall.webp"
 import {useQuery} from "@tanstack/react-query";
 import {fetchServerStatus} from "@/scripts/serverStatuses.ts";
-import {LUMA_IP_ADDRESS} from "@/constants.ts";
+import {DATE, LUMA_IP_ADDRESS} from "@/constants.ts";
 import sourceCodeLuma from "@/assets/BlackLumaAlert.webp";
 import {useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';
 
 function Footer() {
-    const currentYear = new Date().getFullYear();
+    const currentYear = DATE.getFullYear();
     let { data: rawStatus, isLoading, isError } = useQuery<string>({
         queryKey: ["mcServerStatus"],
         queryFn: fetchServerStatus,

@@ -1,46 +1,57 @@
 @use "@/App.module" as *;
 
 .topVoterContainer {
+    position: relative;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers all content horizontally */
-    justify-content: center; /* Centers all content vertically */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .bodyRenderContainer {
     display: flex;
-    justify-content: center; /* Center image horizontally */
-    align-items: center; /* Center image vertically */
+    justify-content: center;
+    align-items: center;
     width: 100%;
 }
 
 .bodyRenderImage {
-    width: 50%; /* Adjust as needed */
+    width: 50%;
     display: block;
-    margin: auto; /* Ensures centering */
+    margin: auto;
 }
-
 
 .textContainer {
-    text-align: center;
-    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 2rem;
 }
 
-%textStyle {
-    font-size: 100%;
+.textStyling {
+    position: absolute;
+    margin-top: 8vh;
+    text-align: center;
     text-transform: uppercase;
-    text-align: center;
-}
+    flex-wrap: wrap;
+    //display: block;
 
-.textStyle1 {
-    @extend %textStyle;
-    color: $primary-color;
-    font-family: 'Paytone One', sans-serif;
-}
 
-.textStyle2 {
-    @extend %textStyle;
-    font-family: 'Poppins', sans-serif;
-    color: $secondary-color;
+    h5 {
+        position: relative;
+        top: 0;
+        color: $primary-color;
+        font-family: 'Paytone One', sans-serif;
+        word-wrap: break-word;
+        word-break: break-word;
+        //min-height: 2em;
+        font-size: 90%;
+    }
+
+    h4 {
+        font-family: 'Poppins', sans-serif;
+        color: $secondary-color;
+    }
 }
