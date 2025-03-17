@@ -3,7 +3,7 @@ import lumaLogo from "@/assets/LogoSmall.webp"
 import {useQuery} from "@tanstack/react-query";
 import {fetchServerStatus} from "@/scripts/serverStatuses.ts";
 import {DATE, LUMA_IP_ADDRESS} from "@/constants.ts";
-import sourceCodeLuma from "@/assets/BlackLumaAlert.webp";
+import sourceCodeLuma from "@/assets/lumas/BlackLumaAlert.webp";
 import {useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { faDiscord } from '@fortawesome/free-brands-svg-icons';

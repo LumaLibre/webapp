@@ -2,8 +2,8 @@ import styles from "./LeadContent.module.scss";
 import generalStyles from "../HeaderSector.module.scss";
 import groundImg from "@/assets/GroundBackground.webp";
 import houseImg from "@/assets/House.webp";
-import crossPlatformImg from "@/assets/CrossplatformLuma.webp";
-import eventImg from "@/assets/EventLuma.webp";
+import crossPlatformImg from "@/assets/lumas/CrossplatformLuma.webp";
+import eventImg from "@/assets/lumas/EventLuma.webp";
 
 function LeadContent() {
     return (

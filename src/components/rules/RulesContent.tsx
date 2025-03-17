@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styles from "./RulesContent.module.scss";
-import judgeLuma from "@/assets/JudgeLuma.webp";
+import judgeLuma from "@/assets/lumas/JudgeLuma.webp";
 import gavel from "@/assets/Gavel.webp"
 import Label from "@/components/label/Label.tsx";
 import OverviewRules from "@/components/rules/components/OverviewRules.tsx";

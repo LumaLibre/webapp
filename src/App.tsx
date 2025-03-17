@@ -1,14 +1,17 @@
-import { Routes, Route } from "react-router-dom";
+import React from "react";
 import styles from "./App.module.scss";
-import MainPage from "./pages/MainPage.tsx";
-import RulesPage from "./pages/RulesPage.tsx";
-import NewsPostPage from "./pages/NewsPostPage.tsx";
-import NewsPage from "./pages/NewsPage.tsx";
-import VotePage from "@/pages/VotePage.tsx";
+import {Routes, Route} from "react-router-dom";
 import {useEffect} from "react";
-import PrivacyPage from "@/pages/PrivacyPage.tsx";
-import TermsPage from "@/pages/TermsPage.tsx";
-import Unknown404Page from "@/pages/Unknown404Page.tsx";
+import LoadingPage from "@/pages/LoadingPage.tsx";
+
+const MainPage = React.lazy(() => import("@/pages/MainPage.tsx"));
+const RulesPage = React.lazy(() => import("@/pages/RulesPage.tsx"));
+const VotePage = React.lazy(() => import("@/pages/VotePage.tsx"));
+const NewsPage = React.lazy(() => import("@/pages/NewsPage.tsx"));
+const NewsPostPage = React.lazy(() => import("@/pages/NewsPostPage.tsx"));
+const PrivacyPage = React.lazy(() => import("@/pages/PrivacyPage.tsx"));
+const TermsPage = React.lazy(() => import("@/pages/TermsPage.tsx"));
+const Unknown404Page = React.lazy(() => import("@/pages/Unknown404Page.tsx"));
 
 
 export const setTitle = (title: string) => {
@@ -17,20 +20,27 @@ export const setTitle = (title: string) => {
     }, [title]);
 };
 
-// In the future, I'd like to have the webserver deliver each page separately.
-// For now, this is fine, but in the future, we should have a server-side rendering solution.
+const Lazy = ({ children }: { children: React.ReactNode }) => {
+    return (
+        <React.Suspense fallback={<LoadingPage />}>
+            {children}
+        </React.Suspense>
+    );
+};
+
+
 function App() {
     return (
         <div className={styles.appContainer}>
             <Routes>
-                <Route path="/" element={<MainPage />}/>
-                <Route path="/rules" element={<RulesPage />} />
-                <Route path="/vote" element={<VotePage />} />
-                <Route path="/news" element={<NewsPage />} />
-                <Route path="/news/:id" element={<NewsPostPage />} />
-                <Route path="/privacy" element={<PrivacyPage />} />
-                <Route path="/terms" element={<TermsPage />} />
-                <Route path="*" element={<Unknown404Page />} />
+                <Route path="/" element={<Lazy><MainPage /></Lazy>}/>
+                <Route path="/rules" element={<Lazy><RulesPage /></Lazy>} />
+                <Route path="/vote" element={<Lazy><VotePage /></Lazy>} />
+                <Route path="/news" element={<Lazy><NewsPage /></Lazy>} />
+                <Route path="/news/:id" element={<Lazy><NewsPostPage /></Lazy>} />
+                <Route path="/privacy" element={<Lazy><PrivacyPage /></Lazy>} />
+                <Route path="/terms" element={<Lazy><TermsPage /></Lazy>} />
+                <Route path="*" element={<Lazy><Unknown404Page /></Lazy>} />
             </Routes>
         </div>
     );

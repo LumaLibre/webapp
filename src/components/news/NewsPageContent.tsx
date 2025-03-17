@@ -45,7 +45,7 @@ function NewsPageContent({ page }: { page: number }) {
         queryFn: fetchAllNewsPosts,
     });
 
-    if (isLoading) return newsStyleSection(<h2>Loading news posts...</h2>);
+    if (isLoading) return newsStyleSection(<div></div>);
     if (error) return newsStyleSection(<h2>Error fetching news posts: {error.message}</h2>);
     if (!newsPosts) return newsStyleSection(<h2>No news posts found.</h2>);
 
@@ -56,12 +56,16 @@ function NewsPageContent({ page }: { page: number }) {
     const numOfPages = Math.ceil(newsPosts.length / postsPerPage);
 
     if (paginatedPosts.length === 0) {
-        if (page > numOfPages) {
-            window.location.href = `${pageRef}${numOfPages}`;
-        } else {
-            window.location.href = `/news`;
-        }
+        window.scrollTo(0, 0);
+        return newsStyleSection(<h2>No news posts found.</h2>);
     }
+
+    const handleArrowClick = (direction: "forward" | "backward") => {
+        if ((direction === "backward" && page === 1) || (direction === "forward" && page === numOfPages)) {
+            // If we are on the first or last page, just scroll to the top instead of navigating
+            window.scrollTo(0, 0);
+        }
+    };
 
     return newsStyleSection(
         <div className={styles.postList}>
@@ -78,13 +82,31 @@ function NewsPageContent({ page }: { page: number }) {
                 );
             })}
             <div className={styles.carouselNav}>
-                <a className={styles.carouselNavBack} href={`${pageRef}${page - 1}`}>
+                <a
+                    className={styles.carouselNavBack}
+                    href={`${pageRef}${page - 1}`}
+                    onClick={(e) => {
+                        if (page === 1) {
+                            e.preventDefault();
+                            handleArrowClick("backward");
+                        }
+                    }}
+                >
                     <div className={styles.carouselArrow} />
                 </a>
                 {Array.from({ length: numOfPages }, (_, i) => (
                     <a key={i} className={styles.carouselNavDot} href={`${pageRef}${i + 1}`} />
                 ))}
-                <a className={styles.carouselNavForward} href={`${pageRef}${page + 1}`}>
+                <a
+                    className={styles.carouselNavForward}
+                    href={`${pageRef}${page + 1}`}
+                    onClick={(e) => {
+                        if (page === numOfPages) {
+                            e.preventDefault();
+                            handleArrowClick("forward");
+                        }
+                    }}
+                >
                     <div className={styles.carouselArrow} />
                 </a>
             </div>

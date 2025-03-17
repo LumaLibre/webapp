@@ -1,8 +1,8 @@
 import {MINOTAR_API} from "@/constants.ts";
 import {JSX} from "react";
-import ReactMarkdown from 'react-markdown';
+import ReactMarkdown from "react-markdown";
 // @ts-ignore
-import emoji from 'emoji-dictionary';
+import emoji from "emoji-dictionary";
 
 export class NewsPostContainer {
 
