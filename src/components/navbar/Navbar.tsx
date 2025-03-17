@@ -1,18 +1,11 @@
 import { useState } from "react";
 import styles from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-    faHouse,
-    faGavel,
-    faCheckCircle,
-    faStore,
-    faMap,
-    faBook,
-    faRocket
-} from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-router-dom"; // Import Link for navigation
+import { faHouse, faGavel, faCheckCircle, faStore, faMap, faBook, faRocket } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-router-dom";
+import { STORE, WIKI } from "@/constants";
 
-// FIXME: Redo this whole component
+
 
 function Navbar() {
     const [isMenuOpen, setMenuOpen] = useState(false);
@@ -23,10 +16,7 @@ function Navbar() {
 
     return (
         <nav className={styles.navbar}>
-            <div
-                className={`${styles.hamburger} ${isMenuOpen ? styles.open : ""}`}
-                onClick={toggleMenu}
-            >
+            <div className={`${styles.hamburger} ${isMenuOpen ? styles.open : ""}`} onClick={toggleMenu}>
                 <div/>
                 <div/>
                 <div/>
@@ -34,48 +24,45 @@ function Navbar() {
 
             <ul className={`${styles.navList} ${isMenuOpen ? styles.open : ""}`}>
                 <li className={styles.navItem}>
-                    <Link to="/" className={styles.navLink}>
+                    <Link to="/" className={styles.navLink} onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faHouse} className={styles.navIcon}/>
-                        Home
+                        <span>Home</span>
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link to="/rules" className={styles.navLink}>
+                    <Link to="/rules" className={styles.navLink} onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faGavel} className={styles.navIcon}/>
-                        Rules
+                        <span>Rules</span>
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link to="/vote" className={styles.navLink}>
+                    <Link to="/vote" className={styles.navLink} onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faCheckCircle} className={styles.navIcon}/>
-                        Vote
+                        <span>Vote</span>
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <Link to="/news" className={styles.navLink}>
+                    <Link to="/news" className={styles.navLink} onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faRocket} className={styles.navIcon}/>
-                        News
+                        <span>News</span>
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://store.lumamc.net" className={styles.navLink} target="_blank"
-                       rel="noopener noreferrer">
+                    <a href={STORE} target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faStore} className={styles.navIcon}/>
-                        Store
+                        <span>Store</span>
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://map.lumamc.net" className={styles.navLink} target="_blank"
-                       rel="noopener noreferrer">
+                    <a href="https://map.lumamc.net" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faMap} className={styles.navIcon}/>
-                        Map
+                        <span>Map</span>
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://wiki.lumamc.net" className={styles.navLink} target="_blank"
-                       rel="noopener noreferrer">
+                    <a href={WIKI} target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faBook} className={styles.navIcon}/>
-                        Wiki
+                        <span>Wiki</span>
                     </a>
                 </li>
             </ul>
