@@ -5,6 +5,13 @@ $primary-color: #911AB0;
 $secondary-color: #cdb8d0;
 $card-color: #200c2c;
 
+#root {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
 @mixin artBackground($bg-url) {
     display: flex;
     justify-content: center;
@@ -45,11 +52,4 @@ $card-color: #200c2c;
     flex-direction: column;
     width: 100vw;
     overflow: hidden;
-}
-
-#root {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 2rem;
-    text-align: center;
 }
