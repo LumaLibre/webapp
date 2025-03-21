@@ -12,8 +12,8 @@ function MainPage() {
         <div>
             <Navbar />
             <Header />
-            <LeadContent />
-            <SecondaryContent />
+            {/*<LeadContent />*/}
+            {/*<SecondaryContent />*/}
             <Footer />
         </div>
     );
