@@ -25,23 +25,23 @@ export class NewsPostContainer {
         this.content = content;
     }
 
-    public getAuthorAvatarURL(): string {
+    getAuthorAvatarURL(): string {
         return `${MINOTAR_API}helm/${this.author}`;
     }
 
-    public getAuthorAvatar(): JSX.Element {
+    getAuthorAvatar(): JSX.Element {
         return <img src={this.getAuthorAvatarURL()} alt={this.author} />;
     }
 
-    public getAuthorAvatarURLWithSize(size: number): string {
-        return `${MINOTAR_API}helm/${this.author}/${size}.png`;
+    getAuthorAvatarURLWithSize(size: number): string {
+        return `${MINOTAR_API}helm/${this.author}/${size}`;
     }
 
-    public getAuthorAvatarWithSize(size: number): JSX.Element {
+    getAuthorAvatarWithSize(size: number): JSX.Element {
         return <img src={this.getAuthorAvatarURLWithSize(size)} alt={this.author} />;
     }
 
-    public formatTimestampWithOrdinal(): string {
+    formatTimestampWithOrdinal(): string {
         const date = new Date(this.timestamp);
         const day = date.getDate();
         const month = date.toLocaleString('default', { month: 'long' });
@@ -62,21 +62,21 @@ export class NewsPostContainer {
     }
 
     // Returns a short version of the timestamp (e.g., 1/17, 2/20, 3/5, etc.)
-    public formatTimestampShort(): string {
+    formatTimestampShort(): string {
         const date = new Date(this.timestamp);
         const month = date.getMonth() + 1;
         const day = date.getDate();
         return `${month}/${day}`;
     }
 
-    public renderContent(): JSX.Element {
+    renderContent(): JSX.Element {
         const markdownWithBreaks = this.content
             .replace(/\n/g, '  \n')
             .replace(/:\w+:/g, (match) => emoji.getUnicode(match) || match);
         return <ReactMarkdown>{markdownWithBreaks}</ReactMarkdown>;
     }
 
-    public renderContentSmall(): JSX.Element {
+    renderContentSmall(): JSX.Element {
         let newContent = this.content
             .replace(/\n+/g, ' ')
             .replace(/\*/g, '')

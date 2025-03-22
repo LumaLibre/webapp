@@ -30,7 +30,7 @@ const StoreRules = () => {
                 <ul>
                     <li>Tags must be bold, in lettercase, and may only be one word.</li>
                     <li>No additional effects such as strikethrough, italics, or obfuscated text.</li>
-                    <li>A maximum of two RGBs colors may be used.</li>
+                    <li>A maximum of two RGB colors may be used.</li>
                     <li>Inappropriate or offensive words are forbidden.</li>
                     <li>Event-related terms may be denied.</li>
                     <li>Tags must be unique, anything existing in the server may be denied.</li>

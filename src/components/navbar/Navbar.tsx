@@ -3,8 +3,7 @@ import styles from "./Navbar.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHouse, faGavel, faCheckCircle, faStore, faMap, faBook, faRocket } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-import { STORE, WIKI } from "@/constants";
-
+import { STORE, WIKI } from "@/constants.ts";
 
 
 function Navbar() {
@@ -48,19 +47,19 @@ function Navbar() {
                     </Link>
                 </li>
                 <li className={styles.navItem}>
-                    <a href={STORE} target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                    <a href={STORE} rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faStore} className={styles.navIcon}/>
                         <span>Store</span>
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href="https://map.lumamc.net" target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                    <a href="https://map.lumamc.net" rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faMap} className={styles.navIcon}/>
                         <span>Map</span>
                     </a>
                 </li>
                 <li className={styles.navItem}>
-                    <a href={WIKI} target="_blank" rel="noopener noreferrer" onClick={toggleMenu}>
+                    <a href={WIKI} rel="noopener noreferrer" onClick={toggleMenu}>
                         <FontAwesomeIcon icon={faBook} className={styles.navIcon}/>
                         <span>Wiki</span>
                     </a>

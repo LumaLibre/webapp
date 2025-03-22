@@ -2,11 +2,22 @@ import styles from "./Footer.module.scss"
 import lumaLogo from "@/assets/LogoSmall.webp"
 import {useQuery} from "@tanstack/react-query";
 import {fetchServerStatus} from "@/scripts/serverStatuses.ts";
-import {DATE, LUMA_IP_ADDRESS} from "@/constants.ts";
-import sourceCodeLuma from "@/assets/lumas/BlackLumaAlert.webp";
-import {useEffect, useState} from "react";
+import {DATE, DISCORD_INV, LUMA_IP_ADDRESS, STORE, WIKI} from "@/constants.ts";
+import {JSX, useEffect, useState} from "react";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faDiscord } from '@fortawesome/free-brands-svg-icons';
+import sourceCodeIcon from "@/assets/icons/SourceCodeIcon.webp";
+import wikiIcon from "@/assets/icons/WikiIcon.webp";
+import tiktokIcon from "@/assets/icons/TikTokIcon.webp";
+import storeIcon from "@/assets/icons/StoreIcon.webp";
+import discordIcon from "@/assets/icons/DiscordIcon.webp";
+
+const linkElement = (link: string, element: JSX.Element) => {
+    return (
+        <a href={link} target="_blank" rel="noopener noreferrer">
+            {element}
+        </a>
+    );
+};
 
 function Footer() {
     const currentYear = DATE.getFullYear();
@@ -41,8 +52,11 @@ function Footer() {
                         <h5>{hoverText}</h5>
                     </div>
                 </div>
-                <div className={styles.footerTopSocialLinksContainer}>
-                    <FontAwesomeIcon icon={faDiscord} className={styles.footerTopSocialLink} />
+                <div className={styles.footerTopLinksContainer}>
+                    {linkElement(DISCORD_INV, <img src={discordIcon} alt="Discord" className={styles.discordIcon}/>)}
+                    {linkElement(STORE, <img src={storeIcon} alt="Store" className={styles.storeIcon}/>)}
+                    {linkElement("https://www.tiktok.com/@playlumamc", <img src={tiktokIcon} alt="Tiktok" className={styles.tiktokIcon}/>)}
+                    {linkElement(WIKI, <img src={wikiIcon} alt="Wiki" className={styles.wikiIcon}/>)}
                 </div>
             </div>
             <div className={styles.footerBottomContainer}>
@@ -52,7 +66,7 @@ function Footer() {
                 </div>
                 <div className={styles.footerBottomItems}>
                     <a href="https://github.com/LumaLibre/web" target="_blank" rel="noopener noreferrer">
-                        <img src={sourceCodeLuma} alt="Luma Logo" className={styles.sourceCodeLuma}/>
+                        <img src={sourceCodeIcon} alt="Source Code" className={styles.sourceCodeIcon}/>
                     </a>
                 </div>
             </div>

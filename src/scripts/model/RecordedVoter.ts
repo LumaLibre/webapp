@@ -12,11 +12,11 @@ export class RecordedVoter {
         this.name = name;
     }
 
-    public getHeadRenderURL(): string {
+    getHeadRenderURL(): string {
         return `${CRAFATAR_API}renders/head/${this.uuid}?overlay=true`;
     }
 
-    public getBodyRenderURL(): string {
+    getBodyRenderURL(): string {
         return `${CRAFATAR_API}renders/body/${this.uuid}?overlay=true`;
     }
 }
