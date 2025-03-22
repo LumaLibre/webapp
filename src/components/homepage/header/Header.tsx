@@ -1,10 +1,10 @@
 import styles from "./Header.module.scss";
-import logo from "@/assets/LumaText.webp";
 import newLogo from "@/assets/LumaLogoBig.png";
 import welcomeText from "@/assets/LumaText.png";
 import ipButton from "@/assets/Button.webp";
 import {LUMA_IP_ADDRESS} from "@/constants.ts";
-import littleLuma from "@/assets/lumas/BreweryLuma.webp";
+import littleLuma from "@/assets/lumas/LumaMainLuma.png";
+import SmallTextLogo from "@/assets/LumaText.webp";
 
 function Header() {
     return (
@@ -16,19 +16,14 @@ function Header() {
             </div>
 
             <img src={newLogo} alt="Luma Logo" className={styles.newLogo}/>
-            {/*<img src={logo} alt="Luma Logo" className={styles.logoWelcomeImage}/>*/}
+            {/*<img src={SmallTextLogo} alt="Luma Logo" className={styles.miniLumaLogo}/>*/}
             <img src={littleLuma} alt="Luma Logo" className={styles.littleLumaIcon}/>
-            {/*<img src={welcomeText} alt="Welcome Text" className={styles.lumaTextWelcome}/>*/}
 
             <div className={styles.descriptionContainer}>
                 We're a TownySMP server focused on high-quality gameplay and a vibrant,
                 welcoming community. Join us to enjoy unique features like custom items,
                 a seasonal world, item wraps, mcMMO, and Towny!
             </div>
-
-            {/*<div className={styles.logoSection}>*/}
-            {/*    <img src={logo} alt="Luma Logo" className={styles.logoImage} />*/}
-            {/*</div>*/}
 
             {/*<div className={styles.IPButtonSection}>*/}
             {/*    <div className={styles.IPButtonContainer}>*/}
