@@ -118,3 +118,35 @@
         display: none;
     }
 }
+
+.miniLumaLogo {
+    position: absolute;
+    top: 0.4%;
+    left:10%;
+    transform: translateX(-50%);
+    width: 10.5%;
+    height: auto;
+    z-index: 4;
+}
+
+.discordButton {
+    position: absolute;
+    margin-bottom: 94%;
+    margin-left: 105%;
+    transform: translateX(-50%);
+    width: 26%;
+    height: auto;
+    z-index: 4;
+    opacity: 0.7;  // 70% transparency
+}
+
+.playButton {
+    position: absolute;
+    margin-bottom: 9%;
+    margin-right: 45%;
+    transform: translateX(-50%);
+    width: 26%;
+    height: auto;
+    z-index: 4;
+    opacity: 0.7;  // 70% transparency
+}

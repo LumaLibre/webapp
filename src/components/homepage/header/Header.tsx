@@ -5,6 +5,8 @@ import ipButton from "@/assets/Button.webp";
 import {LUMA_IP_ADDRESS} from "@/constants.ts";
 import littleLuma from "@/assets/lumas/LumaMainLuma.png";
 import SmallTextLogo from "@/assets/LumaText.webp";
+import DiscordBtnNav from "@/assets/DiscordButtonImg.png";
+import PlayButton from "@/assets/PlayButtonImg.png";
 
 function Header() {
     return (
@@ -16,7 +18,9 @@ function Header() {
             </div>
 
             <img src={newLogo} alt="Luma Logo" className={styles.newLogo}/>
-            {/*<img src={SmallTextLogo} alt="Luma Logo" className={styles.miniLumaLogo}/>*/}
+            <img src={SmallTextLogo} alt="Luma Logo" className={styles.miniLumaLogo}/>
+            <img src={DiscordBtnNav} alt="Luma Logo" className={styles.discordButton}/>
+            <img src={PlayButton} alt="Luma Logo" className={styles.playButton}/>
             <img src={littleLuma} alt="Luma Logo" className={styles.littleLumaIcon}/>
 
             <div className={styles.descriptionContainer}>
